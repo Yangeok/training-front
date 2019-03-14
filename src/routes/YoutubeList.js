@@ -7,7 +7,7 @@ class YoutubeList extends Component {
     people: []
   };
 
-  componentWillMount() {
+  componentDidMount() {
     axios.get(proxy + '/youtube').then(res => {
       const people = res.data.parseYaml.parseYoutube;
       this.setState({ people });
@@ -23,8 +23,8 @@ class YoutubeList extends Component {
             <ul>
               <li>
                 <a href={person.url}>{person.name}</a>
+                <div>{person.desc}</div>
               </li>
-              <li>{person.desc}</li>
             </ul>
           ))}
         </h3>

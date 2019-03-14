@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 
 class Layout extends Component {
   render() {
-    return <div />;
+    return (
+      <div>
+        <Link to={'/'} />
+      </div>
+    );
   }
 }
 

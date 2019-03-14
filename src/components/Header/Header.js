@@ -11,13 +11,19 @@ class Header extends Component {
             <Link to={'/'}>Home</Link>
           </li>
           <li>
+            <Link to={'/about'}>About</Link>
+          </li>
+          <li>
             <Link to={'/blog'}>Blog</Link>
           </li>
           <li>
             <Link to={'/youtube'}>Youtube</Link>
           </li>
           <li>
-            <Link to={'/about'}>About</Link>
+            <Link to={'/blog/post'}>BlogPost</Link>
+          </li>
+          <li>
+            <Link to={'/youtube/post'}>YoutubePost</Link>
           </li>
         </ul>
       </div>

@@ -9,7 +9,8 @@
     "react-dom": "^16.8.4",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.8",
-    "read-package-json": "^2.0.13"
+    "read-package-json": "^2.0.13",
+    "uniqid": "^5.0.3"
   },
   "scripts": {
     "start": "cross-env NODE_PATH=src react-scripts start",
