@@ -1,3 +1,3 @@
-export { default as Blog } from './Blog';
-export { default as Youtube } from './Youtube';
+export { default as BlogList } from './BlogList';
+export { default as YoutubeList } from './YoutubeList';
 export { default as About } from './About';

@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import proxy from '../lib/readPackageJson';
 
-class Youtube extends Component {
+class BlogList extends Component {
   state = {
     people: []
   };
 
   componentWillMount() {
-    axios.get(proxy + '/youtube').then(res => {
-      console.log(res);
-      const people = res.data.parseYaml.parseYoutube;
+    axios.get(proxy + '/blog').then(res => {
+      const people = res.data.parseYaml.parseBlog;
       this.setState({ people });
     });
   }
@@ -18,7 +17,7 @@ class Youtube extends Component {
   render() {
     return (
       <div>
-        <h1>Youtube</h1>
+        <h1>BlogList</h1>
         <h3>
           {this.state.people.map(person => (
             <ul>
@@ -34,4 +33,4 @@ class Youtube extends Component {
   }
 }
 
-export default Youtube;
+export default BlogList;
