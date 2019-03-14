@@ -7,7 +7,7 @@ class Youtube extends Component {
     people: []
   };
 
-  componentDidMount() {
+  componentWillMount() {
     axios.get(proxy + '/youtube').then(res => {
       console.log(res);
       const people = res.data.parseYaml.parseYoutube;

@@ -7,7 +7,7 @@ class Blog extends Component {
     people: []
   };
 
-  componentDidMount() {
+  componentWillMount() {
     axios.get(proxy + '/blog').then(res => {
       console.log(res);
       const people = res.data.parseYaml.parseBlog;
