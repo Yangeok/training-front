@@ -18,7 +18,7 @@ class Youtube extends Component {
   render() {
     return (
       <div>
-        <h1>Blog</h1>
+        <h1>Youtube</h1>
         <h3>
           {this.state.people.map(person => (
             <ul>
