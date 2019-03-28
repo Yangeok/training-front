@@ -3,7 +3,7 @@ class YoutubePost extends Component {
   render() {
     return (
       <div>
-        <h1>BlogPost</h1>
+        <h1>YoutubePost</h1>
       </div>
     );
   }

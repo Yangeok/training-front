@@ -1,5 +1,40 @@
-export { default as About } from './About';
-export { default as BlogList } from './BlogList';
-export { default as YoutubeList } from './YoutubeList';
-export { default as BlogPost } from './BlogPost';
-export { default as YoutubePost } from './YoutubePost';
+import {
+  Home,
+  About,
+  BlogList,
+  BlogPost,
+  YoutubeList,
+  YoutubePost,
+  Test
+} from '../pages';
+
+export const route = [
+  {
+    path: '/',
+    page: Home
+  },
+  {
+    path: '/about',
+    page: About
+  },
+  {
+    path: '/blog',
+    page: BlogList
+  },
+  {
+    path: '/blog/post',
+    page: BlogPost
+  },
+  {
+    path: '/youtube',
+    page: YoutubeList
+  },
+  {
+    path: '/youtube/post',
+    page: YoutubePost
+  },
+  {
+    path: '/test',
+    page: Test
+  }
+];
