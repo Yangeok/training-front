@@ -6,7 +6,7 @@ const BlogList = () => {
   const [people, setPeople] = useState([]);
 
   useEffect(() => {
-    axios.get('/blog').then(res => {
+    axios.get('blog').then(res => {
       setPeople(res.data.parseYaml.parseBlog);
     });
   }, []);

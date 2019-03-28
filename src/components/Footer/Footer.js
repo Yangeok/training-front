@@ -4,7 +4,7 @@ class Footer extends Component {
   render() {
     return (
       <div>
-        © {new Date().getFullYear()}, Built by {``}
+        <p /> © {new Date().getFullYear()}, Built by {``}
         <a href="https://yangeok.github.io/">Yangeok</a>
       </div>
     );
