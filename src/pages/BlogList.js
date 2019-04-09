@@ -7,7 +7,7 @@ const BlogList = () => {
 
   useEffect(() => {
     axios.get('blog').then(res => {
-      setPeople(res.data.parseYaml.parseBlog);
+      setPeople(res.data);
     });
   }, []);
 

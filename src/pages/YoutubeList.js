@@ -11,7 +11,7 @@ class YoutubeList extends Component {
   componentDidMount() {
     this.timer = setInterval(this.progress(), 20);
     axios.get('/youtube').then(res => {
-      const people = res.data.parseYaml.parseYoutube;
+      const people = res.data;
       this.setState({ people });
     });
   }
