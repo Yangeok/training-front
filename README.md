@@ -2,10 +2,9 @@
 
 ## Todo
 
-- api 서버에서 목록, 피드를 읽어옵니다.
-- ui를 구성합니다.
-- a태그를 없앱니다.
+- rss 피드 api서버에서 가져와야 한다.
+- ui를 a태그없이 깔끔하게 구현해야 한다.
 
-## SUmmary
+## Summary
 
-![](https://res.cloudinary.com/yangeok/image/upload/v1554476890/1.jpg)
+![](https://res.cloudinary.com/yangeok/image/upload/v1554888938/11.jpg)
