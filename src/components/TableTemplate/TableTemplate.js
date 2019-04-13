@@ -6,7 +6,8 @@ import {
   TableBody,
   TableHead,
   CircularProgress,
-  withStyles
+  withStyles,
+  Paper
 } from '@material-ui/core';
 import PropTypes from 'prop-types';
 
@@ -40,50 +41,45 @@ class TableTemplate extends Component {
   render() {
     const { people, classes } = this.props;
     return (
-      <div className={classes.root}>
+      <Paper className={classes.root}>
         <Table>
           <TableHead>
             <TableCell>NAME</TableCell>
             <TableCell>DESCRIPTION</TableCell>
             <TableCell>URL</TableCell>
           </TableHead>
+          {/* <CircularProgress
+            className={classes.progress}
+            variant="determinate"
+            value={this.state.completed}
+          /> */}
           <TableBody>
-            {/* <TableRow>
-            <TableCell>
-              <CircularProgress className={classes.progress} />
-            </TableCell>
-          </TableRow> */}
-
-            {/* {props.people.map(person => (
-            <TableRow>
-              <TableCell key={person.id}>{person.name}</TableCell>
-              <TableCell>{person.desc}</TableCell>
-              <TableCell>
-                <a href={person.url}>{person.url}</a>
-              </TableCell>
-            </TableRow>
-          ))} */}
-
             {people ? (
-              people.map(person => (
-                <TableRow>
-                  <TableCell key={person.id}>{person.name}</TableCell>
-                  <TableCell>{person.desc}</TableCell>
-                  <TableCell>
-                    <a href={person.url}>{person.url}</a>
-                  </TableCell>
-                </TableRow>
-              ))
+              people.map(person => {
+                return (
+                  <TableRow>
+                    <TableCell key={person.id}>{person.name}</TableCell>
+                    <TableCell>{person.desc}</TableCell>
+                    <TableCell>
+                      <a href={person.url}>{person.url}</a>
+                    </TableCell>
+                  </TableRow>
+                );
+              })
             ) : (
               <TableRow>
-                <TableCell>
-                  <CircularProgress className={classes.progress} />
-                </TableCell>
+                {/* <TableCell align="center"> */}
+                <CircularProgress
+                  className={classes.progress}
+                  variant="determinate"
+                  value={this.state.completed}
+                />
+                {/* </TableCell> */}
               </TableRow>
             )}
           </TableBody>
         </Table>
-      </div>
+      </Paper>
     );
   }
 }

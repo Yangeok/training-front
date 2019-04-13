@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
@@ -16,6 +16,9 @@ const styles = theme => ({
   },
   title: {
     textAlign: 'right'
+  },
+  progress: {
+    margin: theme.spacing.unit * 2
   }
 });
 

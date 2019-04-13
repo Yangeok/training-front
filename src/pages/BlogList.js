@@ -6,9 +6,9 @@ const BlogList = () => {
   const [people, setPeople] = useState([]);
 
   useEffect(() => {
-    axios.get('blog').then(res => {
-      setPeople(res.data);
-    });
+    // axios.get('blog').then(res => {
+    //   setPeople(res.data);
+    // });
   }, []);
 
   return (
