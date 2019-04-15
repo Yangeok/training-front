@@ -40,6 +40,7 @@ class TableTemplate extends Component {
 
   render() {
     const { people, classes } = this.props;
+    console.log(classes.root);
     return (
       <Paper className={classes.root}>
         <Table>
@@ -48,11 +49,6 @@ class TableTemplate extends Component {
             <TableCell>DESCRIPTION</TableCell>
             <TableCell>URL</TableCell>
           </TableHead>
-          {/* <CircularProgress
-            className={classes.progress}
-            variant="determinate"
-            value={this.state.completed}
-          /> */}
           <TableBody>
             {people ? (
               people.map(person => {
@@ -68,13 +64,13 @@ class TableTemplate extends Component {
               })
             ) : (
               <TableRow>
-                {/* <TableCell align="center"> */}
-                <CircularProgress
-                  className={classes.progress}
-                  variant="determinate"
-                  value={this.state.completed}
-                />
-                {/* </TableCell> */}
+                <TableCell align="center">
+                  <CircularProgress
+                    className={classes.progress}
+                    variant="determinate"
+                    value={this.state.completed}
+                  />
+                </TableCell>
               </TableRow>
             )}
           </TableBody>
