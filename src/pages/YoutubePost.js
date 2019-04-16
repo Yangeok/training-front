@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import YoutubePostContainer from '../containers';
+import { YoutubePostContainer } from '../containers/';
 
 class YoutubePost extends Component {
   render() {
-    return <YoutubePostContainer />;
+    return (
+      <div>
+        <YoutubePostContainer />
+      </div>
+    );
   }
 }
 

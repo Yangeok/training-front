@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-class YoutubePost extends Component {
+
+class YoutubePostContainer extends Component {
   render() {
     return (
       <div>
@@ -9,4 +10,4 @@ class YoutubePost extends Component {
   }
 }
 
-export default YoutubePost;
+export default YoutubePostContainer;
