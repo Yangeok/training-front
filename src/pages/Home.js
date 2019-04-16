@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Header, Footer } from 'components';
+import { HomeContainer } from 'containers';
 
-const Home = () => {
-  return (
-    <div>
-      <h1>Home</h1>
-    </div>
-  );
-};
+class Home extends Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <HomeContainer />
+        <Footer />
+      </div>
+    );
+  }
+}
 
 export default Home;

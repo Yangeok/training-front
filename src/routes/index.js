@@ -4,8 +4,7 @@ import {
   BlogList,
   BlogPost,
   YoutubeList,
-  YoutubePost,
-  Test
+  YoutubePost
 } from '../pages';
 
 export const route = [
@@ -32,9 +31,5 @@ export const route = [
   {
     path: '/youtube/post',
     page: YoutubePost
-  },
-  {
-    path: '/test',
-    page: Test
   }
 ];
