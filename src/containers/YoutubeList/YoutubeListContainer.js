@@ -16,10 +16,10 @@ class YoutubeList extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <h1>YoutubeList</h1>
         <PlatformContainer url={this.state.url} />
-      </div>
+      </>
     );
   }
 }

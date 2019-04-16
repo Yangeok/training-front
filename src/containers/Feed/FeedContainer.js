@@ -44,7 +44,6 @@ class TableTemplate extends Component {
   callApi = async () => {
     const response = await axios.get(this.props.url).then(res => {
       const feeds = res.data.data.docs;
-      console.log(feeds);
       this.setState({ feeds });
     });
     return response;
@@ -60,7 +59,6 @@ class TableTemplate extends Component {
             <TableCell>AUTHOR</TableCell>
             <TableCell>TITLE</TableCell>
             <TableCell>PUBDATE</TableCell>
-            {feeds.contentSnippet ? <TableCell>CONTENTS</TableCell> : null}
           </TableHead>
           <TableBody>
             {feeds ? (
@@ -70,11 +68,11 @@ class TableTemplate extends Component {
                     <TableCell key={feed.id}>{feed.creator}</TableCell>
                     <TableCell>
                       <a href={feed.link}>{feed.title}</a>
+                      <div>{feed.contentSnippet}</div>
                     </TableCell>
                     <TableCell>
                       {feed.pubDate.replace('T', ' ').replace('.000Z', '')}
                     </TableCell>
-                    <TableCell>{feed.contentSnippet}</TableCell>
                   </TableRow>
                 );
               })

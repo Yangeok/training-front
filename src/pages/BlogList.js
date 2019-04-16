@@ -4,9 +4,9 @@ import { BlogListContainer } from '../containers/';
 class BlogList extends Component {
   render() {
     return (
-      <div>
+      <>
         <BlogListContainer />
-      </div>
+      </>
     );
   }
 }

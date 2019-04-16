@@ -28,8 +28,7 @@ const options = [
   <Link to={'/blog'}>Blog</Link>,
   <Link to={'/youtube'}>Youtube</Link>,
   <Link to={'/blog/post'}>BlogPost</Link>,
-  <Link to={'/youtube/post'}>YoutubePost</Link>,
-  <Link to={'/test'}>Test</Link>
+  <Link to={'/youtube/post'}>YoutubePost</Link>
 ];
 
 const ITEM_HEIGHT = 48;

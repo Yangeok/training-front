@@ -4,9 +4,9 @@ import { HomeContainer } from 'containers';
 class Home extends Component {
   render() {
     return (
-      <div>
+      <>
         <HomeContainer />
-      </div>
+      </>
     );
   }
 }

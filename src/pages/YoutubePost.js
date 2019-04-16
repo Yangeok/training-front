@@ -4,9 +4,9 @@ import { YoutubePostContainer } from '../containers/';
 class YoutubePost extends Component {
   render() {
     return (
-      <div>
+      <>
         <YoutubePostContainer />
-      </div>
+      </>
     );
   }
 }
