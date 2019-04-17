@@ -53,23 +53,20 @@ class TableTemplate extends Component {
     const { people, completed } = this.state;
     return (
       <Paper className={classes.root}>
-        <div>state {completed}</div>
         <Table>
           <TableHead>
             <TableCell>NAME</TableCell>
             <TableCell>DESCRIPTION</TableCell>
-            <TableCell>URL</TableCell>
           </TableHead>
           <TableBody>
             {people ? (
               people.map(person => {
                 return (
                   <TableRow>
-                    <TableCell key={person.id}>{person.name}</TableCell>
-                    <TableCell>{person.desc}</TableCell>
-                    <TableCell>
-                      <a href={person.url}>{person.url}</a>
+                    <TableCell key={person.id}>
+                      <a href={person.url}>{person.name}</a>
                     </TableCell>
+                    <TableCell>{person.desc}</TableCell>
                   </TableRow>
                 );
               })

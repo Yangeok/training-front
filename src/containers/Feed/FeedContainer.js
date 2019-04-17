@@ -53,7 +53,6 @@ class TableTemplate extends Component {
     const { feeds, completed } = this.state;
     return (
       <Paper className={classes.root}>
-        <div>state {completed}</div>
         <Table>
           <TableHead>
             <TableCell>AUTHOR</TableCell>
@@ -68,11 +67,10 @@ class TableTemplate extends Component {
                     <TableCell key={feed.id}>{feed.creator}</TableCell>
                     <TableCell>
                       <a href={feed.link}>{feed.title}</a>
+                      <p />
                       <div>{feed.contentSnippet}</div>
                     </TableCell>
-                    <TableCell>
-                      {feed.pubDate.replace('T', ' ').replace('.000Z', '')}
-                    </TableCell>
+                    <TableCell>{feed.pubDate.substring(0, 10)}</TableCell>
                   </TableRow>
                 );
               })
