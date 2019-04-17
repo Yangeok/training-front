@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FeedContainer } from '../';
+import { FeedContainer, Pagination } from '../';
 
 class BlogPost extends Component {
   state = {
@@ -11,6 +11,7 @@ class BlogPost extends Component {
       <>
         <h1>BlogPost</h1>
         <FeedContainer url={this.state.url} />
+        <Pagination />
       </>
     );
   }

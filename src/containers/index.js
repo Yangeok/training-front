@@ -6,3 +6,4 @@ export { default as YoutubeListContainer } from './YoutubeList';
 export { default as YoutubePostContainer } from './YoutubePost';
 export { default as PlatformContainer } from './Platform';
 export { default as FeedContainer } from './Feed';
+export { default as Pagination } from './Pagination';
