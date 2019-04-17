@@ -7,7 +7,7 @@ import { route } from '../routes';
 class App extends Component {
   render() {
     return (
-      <div>
+      <>
         <Helmet>
           <title>Training-log</title>
           <meta name="description" content="Trainging blog & youtube" />
@@ -19,7 +19,7 @@ class App extends Component {
           ))}
         </Switch>
         <Footer />
-      </div>
+      </>
     );
   }
 }
