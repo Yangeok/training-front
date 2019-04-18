@@ -11,17 +11,7 @@ import {
 } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-
-const styles = theme => ({
-  root: {
-    width: '100%',
-    marginTop: theme.spacing.unit * 3,
-    overflowX: 'auto'
-  },
-  progress: {
-    margin: theme.spacing.unit * 2
-  }
-});
+import styles from './PlatformContainerStyle';
 
 class TableTemplate extends Component {
   state = {

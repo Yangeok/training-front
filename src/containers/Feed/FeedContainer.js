@@ -11,22 +11,12 @@ import {
 } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import queryString from 'query-string';
-
-const styles = theme => ({
-  root: {
-    width: '100%',
-    marginTop: theme.spacing.unit * 3,
-    overflowX: 'auto'
-  },
-  progress: {
-    margin: theme.spacing.unit * 2
-  }
-});
+import { styles } from './FeedContainerStyle';
 
 class TableTemplate extends Component {
   state = {
     feeds: [],
+    paginationMeta: [],
     completed: 0
   };
 
@@ -45,15 +35,25 @@ class TableTemplate extends Component {
   callApi = async () => {
     const response = await axios.get(this.props.url).then(res => {
       const feeds = res.data.data.docs;
-      this.setState({ feeds });
+      const paginationMeta = res.data.data;
+      this.setState({ feeds, paginationMeta });
     });
     return response;
   };
   render() {
     const { classes } = this.props;
-    const { feeds, completed } = this.state;
+    const { feeds, paginationMeta, completed } = this.state;
     return (
       <Paper className={classes.root}>
+        <div>totalDocs: {paginationMeta.totalDocs}</div>
+        <div>limit: {paginationMeta.limit}</div>
+        <div>page: {paginationMeta.page}</div>
+        <div>totalPages: {paginationMeta.totalPages}</div>
+        <div>pagingCounter: {paginationMeta.pagingCounter}</div>
+        <div>hasPrevPage: {paginationMeta.hasPrevPage}</div>
+        <div>hasNextPage: {paginationMeta.hasNextPage}</div>
+        <div>prevPage: {paginationMeta.prevPage}</div>
+        <div>nextPage: {paginationMeta.nextPage}</div>
         <Table>
           <TableHead>
             <TableCell>AUTHOR</TableCell>
