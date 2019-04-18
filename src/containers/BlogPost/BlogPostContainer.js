@@ -3,7 +3,7 @@ import { FeedContainer, Pagination } from '../';
 
 class BlogPost extends Component {
   state = {
-    url: '/blog/feed'
+    url: '/blog/feed/1/100'
   };
 
   render() {

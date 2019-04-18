@@ -3,7 +3,7 @@ import { FeedContainer } from '../';
 
 class YoutubePostContainer extends Component {
   state = {
-    url: '/youtube/feed'
+    url: '/youtube/feed/1/100'
   };
 
   render() {
