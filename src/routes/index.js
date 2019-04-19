@@ -17,19 +17,19 @@ export const route = [
     page: About
   },
   {
-    path: '/blog',
+    path: '/blog/1/100',
     page: BlogList
   },
   {
-    path: '/blog/post',
+    path: '/blog/post/1/100',
     page: BlogPost
   },
   {
-    path: '/youtube',
+    path: '/youtube/1/100',
     page: YoutubeList
   },
   {
-    path: '/youtube/post',
+    path: '/youtube/post/1/100',
     page: YoutubePost
   }
 ];

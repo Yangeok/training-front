@@ -25,10 +25,10 @@ const styles = theme => ({
 const options = [
   <Link to={'/'}>Home</Link>,
   <Link to={'/about'}>About</Link>,
-  <Link to={'/blog'}>Blog</Link>,
-  <Link to={'/youtube'}>Youtube</Link>,
-  <Link to={'/blog/post'}>BlogPost</Link>,
-  <Link to={'/youtube/post'}>YoutubePost</Link>
+  <Link to={'/blog/1/100'}>Blog</Link>,
+  <Link to={'/youtube/1/100'}>Youtube</Link>,
+  <Link to={'/blog/post/1/100'}>BlogPost</Link>,
+  <Link to={'/youtube/post/1/100'}>YoutubePost</Link>
 ];
 
 const ITEM_HEIGHT = 48;

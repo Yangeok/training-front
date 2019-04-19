@@ -1,6 +1,6 @@
 import axios from 'axios';
 import config from 'lib/config';
-import * as actionTypes from './types';
+import * as actionTypes from '../constants';
 
 const blogOrYoutube = { blog: '/blog', yotube: '/youtube' };
 const feedOrNull = { feed: '/feed', null: null };

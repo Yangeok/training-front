@@ -65,7 +65,7 @@ class TableTemplate extends Component {
               feeds.map(feed => {
                 return (
                   <TableRow>
-                    <TableCell key={feed.id}>{feed.creator}</TableCell>
+                    <TableCell key={feed._id}>{feed.creator}</TableCell>
                     <TableCell>
                       <a href={feed.link}>{feed.title}</a>
                       <p />

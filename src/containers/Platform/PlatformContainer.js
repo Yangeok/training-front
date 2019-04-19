@@ -33,7 +33,7 @@ class TableTemplate extends Component {
 
   callApi = async () => {
     const response = await axios.get(this.props.url).then(res => {
-      const people = res.data;
+      const people = res.data.data;
       this.setState({ people });
     });
     return response;
@@ -53,7 +53,7 @@ class TableTemplate extends Component {
               people.map(person => {
                 return (
                   <TableRow>
-                    <TableCell key={person.id}>
+                    <TableCell key={person._id} value={person.name}>
                       <a href={person.url}>{person.name}</a>
                     </TableCell>
                     <TableCell>{person.desc}</TableCell>
