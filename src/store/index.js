@@ -1,15 +1,17 @@
-// import { createStore } from 'redux';
-// import modules from './modules';
+import { createStore, applyMiddleware, compose } from 'redux';
+import { rootReducer } from './reducers';
+import logger from 'redux-logger';
 
-// const configureStore = () => {
-//   const devTools =
-//     window.__REDUX_DEVTOOLS_EXTENSION__ &&
-//     window.__REDUX_DEVTOOLS_EXTENSION__();
-//   const store = createStore(modules, devTools);
+const configureStore = () => {
+  const composeEnhancers =
+    window.__REDUX_DEVTOOLS_EXTENSION__ &&
+    window.__REDUX_DEVTOOLS_EXTENSION__();
+  const enhancers = composeEnhancers(applyMiddleware(logger));
+  const store = createStore(rootReducer, composeEnhancers);
 
-//   return store;
-// };
+  return store;
+};
 
-// const rootStore = configureStore();
+const rootStore = configureStore();
 
-// export default rootStore;
+export default rootStore;
