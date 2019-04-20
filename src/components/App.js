@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { Header, Footer } from './';
+import { Header, Footer, Pagination } from './';
 import { route } from '../routes';
 
 class App extends Component {
@@ -18,6 +18,7 @@ class App extends Component {
             <Route exact={true} path={path} component={page} />
           ))}
         </Switch>
+        <Pagination />
         <Footer />
       </>
     );
