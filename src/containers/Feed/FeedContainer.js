@@ -45,7 +45,7 @@ class TableTemplate extends Component {
     const { feeds, paginationMeta, completed } = this.state;
     return (
       <Paper className={classes.root}>
-        <div>totalDocs: {paginationMeta.totalDocs}</div>
+        {/* <div>totalDocs: {paginationMeta.totalDocs}</div>
         <div>limit: {paginationMeta.limit}</div>
         <div>page: {paginationMeta.page}</div>
         <div>totalPages: {paginationMeta.totalPages}</div>
@@ -53,7 +53,7 @@ class TableTemplate extends Component {
         <div>hasPrevPage: {paginationMeta.hasPrevPage}</div>
         <div>hasNextPage: {paginationMeta.hasNextPage}</div>
         <div>prevPage: {paginationMeta.prevPage}</div>
-        <div>nextPage: {paginationMeta.nextPage}</div>
+        <div>nextPage: {paginationMeta.nextPage}</div> */}
         <Table>
           <TableHead>
             <TableCell>AUTHOR</TableCell>
@@ -65,7 +65,7 @@ class TableTemplate extends Component {
               feeds.map(feed => {
                 return (
                   <TableRow>
-                    <TableCell key={feed._id}>{feed.creator}</TableCell>
+                    <TableCell key={feed.title}>{feed.creator}</TableCell>
                     <TableCell>
                       <a href={feed.link}>{feed.title}</a>
                       <p />
