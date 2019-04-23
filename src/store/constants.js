@@ -1,9 +1,6 @@
-export const INDEX_PAGE_SIZE_DEFAULT = 50;
-export const INDEX_PAGE_SIZE_OPTIONS = [5, 10, 20, 30, 50, 100];
-
-export const REQUEST = '_REQUEST';
-export const SUCCESS = '_SUCCESS';
-export const FAILURE = '_FAILURE';
+export const REQUEST = 'REQUEST';
+export const SUCCESS = 'SUCCESS';
+export const FAILURE = 'FAILURE';
 
 function createRequestTypes(base) {
   return [REQUEST, SUCCESS, FAILURE].reduce((acc, type) => {
@@ -11,3 +8,8 @@ function createRequestTypes(base) {
     return acc;
   }, {});
 }
+
+export const INDEX_PAGE_SIZE_DEFAULT = 50;
+export const INDEX_PAGE_SIZE_OPTIONS = [5, 10, 20, 30, 50, 100];
+export const USER_INDEX_META = 'USER_INDEX_META';
+export const USER_INDEX = createRequestTypes('USER_INDEX');

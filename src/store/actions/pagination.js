@@ -1,31 +1,24 @@
 import axios from 'axios';
 import config from 'lib/config';
-import * as actionTypes from '../constants';
+import * as types from '../constants';
 
-const fetchIndexRequest = () => {
-  return {
-    type: actionTypes.USER_INDEX_REQUEST
-  };
+const getBlogList = {
+  request: url => {
+    return {
+      type: types.USER_INDEX[types.REQUEST],
+      url
+    };
+  },
+  success: blogs => {
+    return {
+      type: types.USER_INDEX[types.SUCCESS],
+      payload: blogs
+    };
+  },
+  failure: err => {
+    return {
+      type: types.USER_INDEX[types.FAILURE],
+      err: err.message
+    };
+  }
 };
-
-const fetchIndexSuccess = () => {
-  return {
-    type: actionTypes.USER_INDEX_SUCCESS
-  };
-};
-
-const fetchIndexFailure = () => {
-  return {
-    type: actionTypes.USER_INDEX_FAILURE
-  };
-};
-
-function fetchIndex() {
-  return (dispatch, getState) => {
-    const { meta } = getState().data;
-
-    dispatch(fetchIndexRequest());
-
-    return fetch();
-  };
-}
