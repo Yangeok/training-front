@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { Header, Footer } from './';
+import { Header, Footer } from 'components';
 import { route } from 'routes';
 
 class App extends Component {

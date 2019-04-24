@@ -1,5 +1,5 @@
 import React from 'react';
-import { BlogListForm } from '../components';
+import { BlogListForm } from 'components';
 
 const BlogList = () => {
   return (
