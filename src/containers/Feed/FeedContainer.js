@@ -15,24 +15,25 @@ import { styles } from './FeedContainerStyle';
 
 class TableTemplate extends Component {
   state = {
-    feeds: [],
-    paginationMeta: [],
+    fpaginationMeta: [],
     completed: 0
   };
 
   componentDidMount() {
-    this.timer = setInterval(this.progress, 20);
-    this.callApi();
+    this.timer = setInterval(this._progress, 20);
+    this._callApi();
   }
+
   componentWillUnmount() {
     clearInterval(this.timer);
   }
-  progress = () => {
+
+  _progress = () => {
     const { completed } = this.state;
     this.setState({ completed: completed >= 100 ? 0 : completed + 1 });
   };
 
-  callApi = async () => {
+  _callApi = async () => {
     const response = await axios.get(this.props.url).then(res => {
       const feeds = res.data.data.docs;
       const paginationMeta = res.data.data;
@@ -40,6 +41,7 @@ class TableTemplate extends Component {
     });
     return response;
   };
+
   render() {
     const { classes } = this.props;
     const { feeds, paginationMeta, completed } = this.state;
