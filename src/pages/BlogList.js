@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
-import { BlogListContainer } from '../containers/';
+import React from 'react';
+import { BlogListForm } from '../components';
 
-class BlogList extends Component {
-  render() {
-    return (
-      <>
-        <BlogListContainer />
-      </>
-    );
-  }
-}
+const BlogList = () => {
+  return (
+    <>
+      <BlogListForm />
+    </>
+  );
+};
 
 export default BlogList;

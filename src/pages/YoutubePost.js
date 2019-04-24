@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
-import { YoutubePostContainer } from '../containers/';
+import React from 'react';
+import { YoutubePostForm } from 'components';
 
-class YoutubePost extends Component {
-  render() {
-    return (
-      <>
-        <YoutubePostContainer />
-      </>
-    );
-  }
-}
+const YoutubePost = () => {
+  return (
+    <>
+      <YoutubePostForm />
+    </>
+  );
+};
 
 export default YoutubePost;

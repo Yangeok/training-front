@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { Header, Footer, Pagination } from './';
-import { route } from '../routes';
+import { Header, Footer } from './';
+import { route } from 'routes';
 
 class App extends Component {
   render() {
@@ -13,12 +13,7 @@ class App extends Component {
           <meta name="description" content="Trainging blog & youtube" />
         </Helmet>
         <Header />
-        <Switch>
-          {route.map(({ path, page }) => (
-            <Route exact={true} path={path} component={page} />
-          ))}
-        </Switch>
-        <Pagination />
+        <Switch>{route}</Switch>
         <Footer />
       </>
     );

@@ -1,14 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import {
+  Toolbar,
+  AppBar,
+  IconButton,
+  Typography,
+  Menu,
+  MenuItem
+} from '@material-ui/core/';
 import { withStyles } from '@material-ui/core/styles';
-import IconButton from '@material-ui/core/IconButton';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { options } from 'routes';
 
 const styles = theme => ({
   root: {
@@ -22,21 +24,12 @@ const styles = theme => ({
   }
 });
 
-const options = [
-  <Link to={'/'}>Home</Link>,
-  <Link to={'/about'}>About</Link>,
-  <Link to={'/blog/1/100'}>Blog</Link>,
-  <Link to={'/youtube/1/100'}>Youtube</Link>,
-  <Link to={'/blog/post/1/100'}>BlogPost</Link>,
-  <Link to={'/youtube/post/1/100'}>YoutubePost</Link>
-];
-
 const ITEM_HEIGHT = 48;
 
 const Header = props => {
   const { classes } = props;
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
   function handleClick(event) {
@@ -46,6 +39,7 @@ const Header = props => {
   function handleClose() {
     setAnchorEl(null);
   }
+
   return (
     <div className={classes.root}>
       <AppBar position="static" color="default">

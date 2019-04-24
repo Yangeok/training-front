@@ -1,3 +1,6 @@
+import React from 'react';
+import { Link, Route } from 'react-router-dom';
+
 import {
   Home,
   About,
@@ -5,31 +8,45 @@ import {
   BlogPost,
   YoutubeList,
   YoutubePost
-} from '../pages';
+} from 'pages';
 
-export const route = [
+const obj = [
   {
     path: '/',
-    page: Home
+    page: Home,
+    name: 'Home'
   },
   {
     path: '/about',
-    page: About
+    page: About,
+    name: 'About'
   },
   {
     path: '/blog/1/100',
-    page: BlogList
+    page: BlogList,
+    name: 'BlogList'
   },
   {
     path: '/blog/post/1/100',
-    page: BlogPost
+    page: BlogPost,
+    name: 'BlogPost'
   },
   {
     path: '/youtube/1/100',
-    page: YoutubeList
+    page: YoutubeList,
+    name: 'YoutubeList'
   },
   {
     path: '/youtube/post/1/100',
-    page: YoutubePost
+    page: YoutubePost,
+    name: 'YoutubePost'
   }
 ];
+
+export const route = obj.map(({ path, page }) => (
+  <Route exact={true} path={path} component={page} />
+));
+
+export const options = obj.map(({ path, name }) => (
+  <Link to={path}>{name}</Link>
+));

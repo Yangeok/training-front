@@ -5,7 +5,7 @@ import Pagination from 'material-ui-flat-pagination';
 
 const theme = createMuiTheme();
 
-class Page extends Component {
+class PagingContainer extends Component {
   state = {
     offset: 0
   };
@@ -31,4 +31,4 @@ class Page extends Component {
   }
 }
 
-export default Page;
+export default PagingContainer;

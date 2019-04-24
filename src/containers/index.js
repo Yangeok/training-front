@@ -1,9 +1,2 @@
-export { default as HomeContainer } from './home';
-export { default as AboutContainer } from './about';
-export { default as BlogListContainer } from './blogList';
-export { default as BlogPostContainer } from './blogPost';
-export { default as YoutubeListContainer } from './youtubeList';
-export { default as YoutubePostContainer } from './youtubePost';
-export { default as PlatformContainer } from './platform';
-export { default as FeedContainer } from './feed';
-export { default as Pagination } from './pagination';
+export { default as ListContainer } from './list';
+export { default as PagingContainer } from './paging';

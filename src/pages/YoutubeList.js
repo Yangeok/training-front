@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
-import { YoutubeListContainer } from '../containers/';
+import React from 'react';
+import { YoutubeListForm } from 'components';
 
-class YoutubeList extends Component {
-  render() {
-    return (
-      <>
-        <YoutubeListContainer />
-      </>
-    );
-  }
-}
+const YoutubeList = () => {
+  return (
+    <>
+      <YoutubeListForm />
+    </>
+  );
+};
 
 export default YoutubeList;
