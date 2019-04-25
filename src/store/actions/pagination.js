@@ -2,7 +2,7 @@ import axios from 'axios';
 import config from 'lib/config';
 import * as types from '../constants';
 
-const getBlogList = {
+export const getBlogList = {
   request: url => {
     return {
       type: types.USER_INDEX[types.REQUEST],
