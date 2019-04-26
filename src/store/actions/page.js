@@ -1,6 +1,6 @@
-import axios from 'axios';
-import config from 'lib/config';
-import * as types from '../constants';
+// import axios from 'axios';
+// import config from 'lib/config';
+import * as types from 'store/constants';
 
 export const getBlogList = {
   request: url => {

@@ -1,6 +1,10 @@
 import { USER_INDEX, REQUEST, SUCCESS, FAILURE } from '../constants';
 
-export default function(state = {}, { type, payload }) {
+const initialState = {
+  isLoading: false
+};
+
+export default function(state = initialState, { type, payload }) {
   switch (type) {
     case USER_INDEX[REQUEST]:
       return {

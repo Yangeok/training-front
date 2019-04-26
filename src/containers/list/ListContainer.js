@@ -13,6 +13,12 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import { styles } from './ListContainerStyle';
 
+import { PageForm, ListForm } from 'components';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { getBlogList } from 'store/actions';
+
 class ListContainer extends Component {
   state = {
     completed: 0
@@ -128,6 +134,7 @@ class ListContainer extends Component {
           <TableHead>{this._isHead()}</TableHead>
           <TableBody>{feeds ? this._isFeeds() : this._isLists()}</TableBody>
         </Table>
+        <PageForm />
       </Paper>
     );
   }
@@ -137,5 +144,17 @@ ListContainer.propTypes = {
   classes: PropTypes.object.isRequired,
   tableHead: PropTypes.array.isRequired
 };
+
+const mapStateToProps = state => {
+  return;
+};
+const mapDispatchToProps = dispatch => {
+  return;
+};
+
+const connectModule = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ListForm);
 
 export default withStyles(styles)(ListContainer);

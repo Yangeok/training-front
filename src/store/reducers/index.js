@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import pagination from './pagination';
+import page from 'store/reducers/page';
 
-export default combineReducers({
-  pagination
+export const rootReducer = combineReducers({
+  page
 });
