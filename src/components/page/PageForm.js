@@ -16,7 +16,6 @@ class Pages extends Component {
 
   render() {
     const { offset } = this.state;
-    console.log(offset);
     return (
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
