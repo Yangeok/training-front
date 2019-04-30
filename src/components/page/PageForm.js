@@ -14,23 +14,21 @@ class Pages extends Component {
     this.setState({ offset });
   }
 
-  _clickPage(id) {
-    this.props.history = `/${id}/100`;
+  componentDidMount() {
+    console.log(this.props.isLoading);
   }
 
   render() {
     const { offset } = this.state;
     return (
       <MuiThemeProvider theme={theme}>
+        <h2>{this.props.isLoading}</h2>
         <CssBaseline />
         <Pagination
           limit={10}
           offset={offset}
           total={1000}
-          onClick={(e, offset) => [
-            this._handleClick(offset),
-            this._clickPage('10')
-          ]}
+          onClick={(e, offset) => this._handleClick(offset)}
         />
       </MuiThemeProvider>
     );

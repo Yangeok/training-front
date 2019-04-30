@@ -9,7 +9,6 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  request: bindActionCreators(getLists.request, dispatch),
   getLists: url => dispatch(getLists.request(url))
 });
 

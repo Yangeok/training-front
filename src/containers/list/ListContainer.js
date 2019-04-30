@@ -48,11 +48,7 @@ class ListContainer extends Component {
     return (
       <TableRow>
         <TableCell align="center">
-          <CircularProgress
-            className={classes.progress}
-            variant="determinate"
-            value={completed}
-          />
+          <CircularProgress className={classes.progress} value={completed} />
         </TableCell>
       </TableRow>
     );

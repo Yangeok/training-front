@@ -1,11 +1,6 @@
 import { GET_LISTS, REQUEST, SUCCESS, FAILURE } from '../constants';
 
-const initialState = {
-  isLoading: false,
-  history: 0
-};
-
-export default function(state = initialState, { type, payload }) {
+export default function(state = {}, { type, payload }) {
   switch (type) {
     case GET_LISTS[REQUEST]:
       return {
