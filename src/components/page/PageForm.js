@@ -14,6 +14,10 @@ class Pages extends Component {
     this.setState({ offset });
   }
 
+  _clickPage(id) {
+    this.props.history = `/${id}/100`;
+  }
+
   render() {
     const { offset } = this.state;
     return (
@@ -23,7 +27,10 @@ class Pages extends Component {
           limit={10}
           offset={offset}
           total={1000}
-          onClick={(e, offset) => this._handleClick(offset)}
+          onClick={(e, offset) => [
+            this._handleClick(offset),
+            this._clickPage('10')
+          ]}
         />
       </MuiThemeProvider>
     );

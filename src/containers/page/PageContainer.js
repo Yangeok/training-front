@@ -4,18 +4,13 @@ import { withRouter } from 'react-router-dom';
 import { getBlogList } from 'store/actions';
 import PageForm from 'components/page/PageForm';
 
-const mapStateToProps = state => {
-  const { isLoading } = this.props;
-  return {
-    isLoading
-  };
-};
+const mapStateToProps = state => ({
+  isLoading: false
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    request: bindActionCreators(getBlogList.request, dispatch)
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  request: bindActionCreators(getBlogList.request, dispatch)
+});
 
 const connectModule = connect(
   mapStateToProps,
