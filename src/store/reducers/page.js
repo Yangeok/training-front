@@ -1,22 +1,23 @@
-import { USER_INDEX, REQUEST, SUCCESS, FAILURE } from '../constants';
+import { GET_LISTS, REQUEST, SUCCESS, FAILURE } from '../constants';
 
 const initialState = {
-  isLoading: false
+  isLoading: false,
+  history: 0
 };
 
 export default function(state = initialState, { type, payload }) {
   switch (type) {
-    case USER_INDEX[REQUEST]:
+    case GET_LISTS[REQUEST]:
       return {
         ...state,
         isLoading: true
       };
-    case USER_INDEX[SUCCESS]:
+    case GET_LISTS[SUCCESS]:
       return payload.reduce(
-        (acc, cur) => ({
-          ...acc,
-          [cur._id]: {
-            ...cur
+        (accumulator, currentValue) => ({
+          ...accumulator,
+          [currentValue._id]: {
+            ...currentValue
           }
         }),
         {
@@ -24,7 +25,7 @@ export default function(state = initialState, { type, payload }) {
           isLoading: false
         }
       );
-    case USER_INDEX[FAILURE]:
+    case GET_LISTS[FAILURE]:
       return {
         ...state,
         error: payload

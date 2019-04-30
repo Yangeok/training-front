@@ -1,21 +1,21 @@
 import * as types from 'store/constants';
 
-export const getBlogList = {
+export const getLists = {
   request: url => {
     return {
-      type: types.USER_INDEX[types.REQUEST],
+      type: types.GET_LISTS[types.REQUEST],
       url
     };
   },
-  success: blogs => {
+  success: payload => {
     return {
-      type: types.USER_INDEX[types.SUCCESS],
-      payload: blogs
+      type: types.GET_LISTS[types.SUCCESS],
+      payload: payload
     };
   },
   failure: err => {
     return {
-      type: types.USER_INDEX[types.FAILURE],
+      type: types.GET_LISTS[types.FAILURE],
       err: err.message
     };
   }

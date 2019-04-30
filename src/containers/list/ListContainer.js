@@ -17,7 +17,7 @@ import { PageForm, ListForm } from 'components';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { getBlogList } from 'store/actions';
+import { getLists } from 'store/actions';
 
 class ListContainer extends Component {
   state = {
@@ -27,10 +27,10 @@ class ListContainer extends Component {
   componentDidMount() {
     this.timer = setInterval(this._progress, 20);
     if (this.props.url.indexOf('feed') !== -1) {
-      this._callFeedApi();
+      this._callPostsApi();
+    } else {
+      this._callListsApi();
     }
-
-    this._callListApi();
   }
 
   componentWillUnmount() {
@@ -58,13 +58,13 @@ class ListContainer extends Component {
     );
   };
 
-  _callListApi = async () => {
+  _callListsApi = async () => {
     const response = await axios.get(this.props.url);
     const people = response.data.data;
     if (people) this.setState({ people });
   };
 
-  _callFeedApi = async () => {
+  _callPostsApi = async () => {
     const response = await axios.get(this.props.url);
     const feeds = response.data.data.docs;
     const paginationMeta = response.data.data;
@@ -134,7 +134,11 @@ class ListContainer extends Component {
           <TableHead>{this._isHead()}</TableHead>
           <TableBody>{feeds ? this._isFeeds() : this._isLists()}</TableBody>
         </Table>
-        <PageForm />
+        <PageForm
+          callLists={this._callListsApi}
+          callPosts={this._callPostsApi}
+          url={this.props.url}
+        />
       </Paper>
     );
   }
