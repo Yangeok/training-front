@@ -1,7 +1,7 @@
 import * as types from 'store/constants';
 
 export const getTests = {
-  request: () => {
+  request: url => {
     return {
       type: types.GET_TESTS[types.REQUEST]
     };

@@ -1,13 +1,17 @@
 import { GET_TESTS, REQUEST, SUCCESS, FAILURE } from 'store/constants';
 
-export default (state = {}, { type, payload }) => {
+const defaultState = {
+  isLoading: false
+};
+
+export default (state = defaultState, { type, payload }) => {
   switch (type) {
     case GET_TESTS[REQUEST]:
-      return { ...state, loading: true };
+      return { ...state, isLoading: true };
     case GET_TESTS[SUCCESS]:
-      return { ...state, loading: false, payload: payload };
+      return { ...state, isLoading: false, payload: payload };
     case GET_TESTS[FAILURE]:
-      return { ...state, loading: false, error: payload };
+      return { ...state, isLoading: false, error: payload };
     default:
       return state;
   }

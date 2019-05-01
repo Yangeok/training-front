@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { getTests } from 'store/actions';
 
-const TestForm = ({ isLoading }) => {
-  return <h2>TEST{isLoading}</h2>;
-};
+class TestForm extends Component {
+  // const TestForm = ({ isLoading }) => {
+
+  componentDidMount() {
+    console.log(this.props);
+  }
+
+  render() {
+    return <h2>TEST</h2>;
+  }
+}
 
 export default TestForm;
