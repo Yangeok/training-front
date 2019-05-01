@@ -4,6 +4,7 @@ export { default as Footer } from 'components/layout/Footer';
 
 export { default as PageForm } from 'components/page/';
 export { default as ListForm } from 'components/list/';
+export { default as TestForm } from 'components/test/';
 
 export { default as BlogListForm } from 'components/blog/BlogList';
 export { default as BlogPostForm } from 'components/blog/BlogPost';

@@ -1,8 +1,7 @@
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { getLists } from 'store/actions';
-import PageForm from 'components/page/PageForm';
+import { PageForm } from 'components/';
 
 const mapStateToProps = state => ({
   isLoading: state.page.isLoading

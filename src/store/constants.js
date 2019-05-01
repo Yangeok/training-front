@@ -10,3 +10,4 @@ function createRequestTypes(base) {
 }
 
 export const GET_LISTS = createRequestTypes('GET_LISTS');
+export const GET_TESTS = createRequestTypes('GET_TESTS');

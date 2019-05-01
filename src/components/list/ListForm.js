@@ -1,16 +1,4 @@
-import React, { Component } from 'react';
-import {
-  TableRow,
-  TableCell,
-  Table,
-  TableBody,
-  TableHead,
-  CircularProgress,
-  withStyles,
-  Paper
-} from '@material-ui/core';
-import PropTypes from 'prop-types';
-import { PageForm } from 'components';
+import { withStyles } from '@material-ui/core';
 
 const styles = theme => ({
   root: {

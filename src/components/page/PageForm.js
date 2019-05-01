@@ -14,15 +14,10 @@ class Pages extends Component {
     this.setState({ offset });
   }
 
-  componentDidMount() {
-    console.log(this.props.isLoading);
-  }
-
   render() {
     const { offset } = this.state;
     return (
       <MuiThemeProvider theme={theme}>
-        <h2>{this.props.isLoading}</h2>
         <CssBaseline />
         <Pagination
           limit={10}

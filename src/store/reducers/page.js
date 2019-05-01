@@ -1,6 +1,10 @@
 import { GET_LISTS, REQUEST, SUCCESS, FAILURE } from '../constants';
 
-export default function(state = {}, { type, payload }) {
+const initialState = {
+  isLoading: '1'
+};
+
+export default (state = initialState, { type, payload }) => {
   switch (type) {
     case GET_LISTS[REQUEST]:
       return {
@@ -28,4 +32,4 @@ export default function(state = {}, { type, payload }) {
     default:
       return state;
   }
-}
+};
