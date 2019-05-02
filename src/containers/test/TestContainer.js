@@ -3,15 +3,22 @@ import { withRouter } from 'react-router-dom';
 import { getTests } from 'store/actions';
 import React, { Component } from 'react';
 import { TestForm } from 'components';
+import * as api from 'lib/getLists';
 
 class TestContainer extends Component {
   componentDidMount() {
-    this.props.getTests('https://training-log-back.herokuapp.com/blog/1/100');
+    // this.props.getTests('blog/1/100');
+    this._getLists();
   }
+
+  _getLists = async () => {
+    const a = await this.props.getTests('blog/1/100');
+    // const a = await api.getLists('blog/1/100');
+    console.log(a);
+  };
 
   render() {
     const { isLoading, people } = this.props;
-    console.log(people);
     return (
       <>
         <h3>TestContainer</h3>
