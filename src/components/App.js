@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { Header, Footer, TestForm } from 'components';
+import { Header, Footer } from 'components';
 import { route } from 'routes';
 
 class App extends Component {
@@ -13,7 +13,6 @@ class App extends Component {
           <meta name="description" content="Trainging blog & youtube" />
         </Helmet>
         <Header />
-        <TestForm />
         <Switch>{route}</Switch>
         <Footer />
       </>

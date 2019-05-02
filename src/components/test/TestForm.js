@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { getTests } from 'store/actions';
+import { TestContainer } from 'containers';
 
 class TestForm extends Component {
   // const TestForm = ({ isLoading }) => {
 
-  componentDidMount() {
-    console.log(this.props);
-  }
-
   render() {
-    return <h2>TEST</h2>;
+    return (
+      <>
+        <h2>TestForm</h2>
+        <TestContainer />
+      </>
+    );
   }
 }
 

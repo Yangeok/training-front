@@ -3,6 +3,7 @@ export { default as Header } from 'components/layout/Header';
 export { default as Footer } from 'components/layout/Footer';
 
 export { default as PageForm } from 'components/page/';
+export { default as FeedForm } from 'components/feed/';
 export { default as ListForm } from 'components/list/';
 export { default as TestForm } from 'components/test/';
 

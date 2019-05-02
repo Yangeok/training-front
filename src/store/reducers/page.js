@@ -1,7 +1,7 @@
 import { GET_LISTS, REQUEST, SUCCESS, FAILURE } from '../constants';
 
 const initialState = {
-  isLoading: '1'
+  isLoading: false
 };
 
 export default (state = initialState, { type, payload }) => {

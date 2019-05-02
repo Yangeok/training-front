@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListContainer } from '../../../containers';
+import { ListContainer } from 'containers';
 
 const i = {
   url: '/blog/1/100',

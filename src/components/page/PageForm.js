@@ -5,17 +5,19 @@ import Pagination from 'material-ui-flat-pagination';
 
 const theme = createMuiTheme();
 
-class Pages extends Component {
+class PageForm extends Component {
   state = {
     offset: 0
   };
 
-  _handleClick(offset) {
+  _handleClick = offset => {
     this.setState({ offset });
-  }
+  };
 
   render() {
     const { offset } = this.state;
+    const { isLoading } = this.props;
+
     return (
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
@@ -30,4 +32,4 @@ class Pages extends Component {
   }
 }
 
-export default Pages;
+export default PageForm;
