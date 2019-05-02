@@ -12,7 +12,7 @@ import {
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import { styles } from './ListContainerStyle';
-import { PageForm } from 'components';
+import { PaginationForm } from 'components';
 
 class ListContainer extends Component {
   state = {
@@ -125,7 +125,7 @@ class ListContainer extends Component {
           <TableHead>{this._isHead()}</TableHead>
           <TableBody>{feeds ? this._isFeeds() : this._isLists()}</TableBody>
         </Table>
-        <PageForm
+        <PaginationForm
           callLists={this._callListsApi}
           callPosts={this._callPostsApi}
           url={this.props.url}

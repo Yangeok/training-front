@@ -5,7 +5,7 @@ import Pagination from 'material-ui-flat-pagination';
 
 const theme = createMuiTheme();
 
-class PageForm extends Component {
+class PaginationForm extends Component {
   state = {
     offset: 0
   };
@@ -32,4 +32,4 @@ class PageForm extends Component {
   }
 }
 
-export default PageForm;
+export default PaginationForm;
