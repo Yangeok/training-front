@@ -1,17 +1,13 @@
-import { GET_LISTS, REQUEST, SUCCESS, FAILURE } from '../constants';
+import { GET_POSTS, REQUEST, SUCCESS, FAILURE } from '../constants';
 
-const initialState = {
-  isLoading: false
-};
-
-export default (state = initialState, { type, payload }) => {
+export default (state = {}, { type, payload }) => {
   switch (type) {
-    case GET_LISTS[REQUEST]:
+    case GET_POSTS[REQUEST]:
       return {
         ...state,
         isLoading: true
       };
-    case GET_LISTS[SUCCESS]:
+    case GET_POSTS[SUCCESS]:
       return payload.reduce(
         (accumulator, currentValue) => ({
           ...accumulator,
@@ -24,7 +20,7 @@ export default (state = initialState, { type, payload }) => {
           isLoading: false
         }
       );
-    case GET_LISTS[FAILURE]:
+    case GET_POSTS[FAILURE]:
       return {
         ...state,
         error: payload

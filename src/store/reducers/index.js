@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
-import page from 'store/reducers/page';
+
+import list from 'store/reducers/list';
+import post from 'store/reducers/post';
+
 import test from 'store/reducers/test';
 
 export const rootReducer = combineReducers({
-  page,
+  list,
+  post,
   test
 });

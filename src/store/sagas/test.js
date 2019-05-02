@@ -1,19 +1,22 @@
-import { put, takeLatest, all } from 'redux-saga/effects';
+import { put, take, all } from 'redux-saga/effects';
 import * as api from 'lib/getLists';
 import * as types from 'store/constants';
+import { getTests } from 'store/actions';
 
-export function* fetchTests() {
+export function* fetchTests(url) {
   yield put({ type: types.GET_TESTS[types.REQUEST] });
   try {
-    const { data } = yield api.getLists('blog/post/1/100');
-    yield put({ type: types.GET_TESTS[types.SUCCESS], data: data });
+    const { data } = yield api.getLists(url);
+    yield put({ type: types.GET_TESTS[types.SUCCESS], data });
+    // yield put(getTests.success(data));
   } catch (e) {
     yield put({ type: types.GET_TESTS[types.FAILURE] });
+    // yield put(getTests.failure(e));
   }
 }
 
 export function* watchFetchTests() {
-  yield takeLatest(types.GET_TESTS[types.REQUEST], fetchTests);
+  yield take(types.GET_TESTS[types.REQUEST], fetchTests);
 }
 
 export default function*() {

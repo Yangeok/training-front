@@ -1,12 +1,10 @@
 import React from 'react';
-import { BlogPostForm } from 'components';
-import { PageContainer } from 'containers';
+import { ListContainer } from 'containers';
 
 const BlogPost = () => {
   return (
     <>
-      <PageContainer />
-      <BlogPostForm />
+      <ListContainer />
     </>
   );
 };

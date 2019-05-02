@@ -3,7 +3,8 @@ import * as types from 'store/constants';
 export const getTests = {
   request: url => {
     return {
-      type: types.GET_TESTS[types.REQUEST]
+      type: types.GET_TESTS[types.REQUEST],
+      url
     };
   },
   success: payload => {
@@ -12,10 +13,10 @@ export const getTests = {
       payload
     };
   },
-  failure: e => {
+  failure: error => {
     return {
       type: types.GET_TESTS[types.SUCCESS],
-      error: e
+      error: error.message
     };
   }
 };

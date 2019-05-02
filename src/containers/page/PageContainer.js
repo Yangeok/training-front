@@ -15,7 +15,6 @@ class PageContainer extends Component {
 
   render() {
     const { isLoading, location, match } = this.props;
-    console.log(match);
     return <h2>PageContainer</h2>;
   }
 }

@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-/**
- * @param {String} url api server page
- */
-export const getLists = url => {
-  axios.get(url).then(results => results);
+export const getLists = async url => {
+  const repsonse = await axios.get(url);
+  const people = repsonse.data.data;
+
+  return people;
 };
