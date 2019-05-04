@@ -13,10 +13,10 @@ export const getLists = {
       payload
     };
   },
-  failure: err => {
+  failure: error => {
     return {
       type: types.GET_LISTS[types.FAILURE],
-      err: err.message
+      error: error.message
     };
   }
 };

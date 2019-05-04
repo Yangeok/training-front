@@ -3,18 +3,16 @@ import { withRouter } from 'react-router-dom';
 import { getTests } from 'store/actions';
 import React, { Component } from 'react';
 import { TestForm } from 'components';
-import * as api from 'lib/getLists';
 
 class TestContainer extends Component {
   componentDidMount() {
-    // this.props.getTests('blog/1/100');
     this._getLists();
   }
 
-  _getLists = async () => {
-    const a = await this.props.getTests('blog/1/100');
-    // const a = await api.getLists('blog/1/100');
-    console.log(a);
+  _getTests = () => {
+    const url = 'https://training-log-back.herokuapp.com/blog/feed/1/100';
+    const list = this.props.getTests('blog');
+    return list;
   };
 
   render() {
@@ -23,7 +21,7 @@ class TestContainer extends Component {
       <>
         <h3>TestContainer</h3>
         <TestForm isLoading={isLoading} people={people} />
-        {isLoading === true ? <div>true</div> : <div>false</div>}
+        <div>{isLoading === true ? 'true' : 'false'}</div>
       </>
     );
   }
@@ -31,7 +29,7 @@ class TestContainer extends Component {
 
 const mapStateToProps = state => ({
   isLoading: state.test.isLoading,
-  people: state.test
+  people: state.test.payload
 });
 
 const mapDispatchToProps = dispatch => ({

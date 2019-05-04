@@ -15,7 +15,7 @@ export const getTests = {
   },
   failure: error => {
     return {
-      type: types.GET_TESTS[types.SUCCESS],
+      type: types.GET_TESTS[types.FAILURE],
       error: error.message
     };
   }

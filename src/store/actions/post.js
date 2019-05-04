@@ -13,10 +13,10 @@ export const getPosts = {
       payload
     };
   },
-  failure: err => {
+  failure: error => {
     return {
       type: types.GET_POSTS[types.FAILURE],
-      err: err.message
+      error: error.message
     };
   }
 };

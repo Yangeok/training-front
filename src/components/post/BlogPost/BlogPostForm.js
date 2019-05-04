@@ -1,16 +1,31 @@
 import React from 'react';
-import { ListContainer } from 'containers';
+import { TableRow, TableCell } from '@material-ui/core';
+import { PaginationForm } from 'components';
 
 const i = {
   url: '/blog/feed/1/100',
   tableHead: ['AUTHOR', 'TITLE', 'PUBDATE']
 };
 
-const BlogPostForm = props => {
+const BlogPostForm = ({ posts }) => {
+  console.log(posts);
   return (
     <>
-      <h1>BlogPost</h1>
-      <ListContainer url={i.url} tableHead={i.tableHead} />
+      {posts &&
+        posts.map(post => {
+          return (
+            <TableRow>
+              <TableCell key={post.title}>{post.creator}</TableCell>
+              <TableCell>
+                <a href={post.link}>{post.title}</a>
+                <p />
+                <div>{post.contentSnippet}</div>
+              </TableCell>
+              <TableCell>{post.pubDate.substring(0, 10)}</TableCell>
+            </TableRow>
+          );
+        })}
+      <PaginationForm />
     </>
   );
 };

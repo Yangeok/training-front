@@ -1,26 +1,21 @@
-import { call, put, take, all, fork } from 'redux-saga/effects';
-import * as api from 'lib/getLists';
-import * as types from 'store/constants';
+import { all, fork, call, put, take, takeLatest } from 'redux-saga/effects';
 import { getTests } from 'store/actions';
+import * as types from 'store/constants';
+import * as api from 'lib/tests';
 
 export function* fetchTests(url) {
   try {
-    const data = yield call(api.getLists, url);
-    // yield put({ type: types.GET_TESTS[types.SUCCESS], data });
+    const data = yield call(api.tests, url);
     yield put(getTests.success(data));
   } catch (e) {
-    yield put({ type: types.GET_TESTS[types.FAILURE] });
-    // yield put(getTests.failure(e));
+    yield put(getTests.failure(e));
   }
 }
 
-export function* watchFetchTests() {
-  while (true) {
-    const { url } = yield take(types.GET_TESTS[types.REQUEST]);
-    yield fork(fetchTests, url);
-  }
+export default function* watchFetchTests() {
+  yield takeLatest(types.GET_TESTS[types.REQUEST], fetchTests);
 }
 
-export default function*() {
-  yield all([fork(watchFetchTests)]);
-}
+// export default function*() {
+//   yield all([fork(watchFetchTests)]);
+// }

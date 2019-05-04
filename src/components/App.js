@@ -14,7 +14,7 @@ class App extends Component {
           <meta name="description" content="Trainging blog & youtube" />
         </Helmet>
         <Header />
-        <TestContainer />
+        {/* <TestContainer /> */}
         <Switch>{route}</Switch>
         <Footer />
       </>

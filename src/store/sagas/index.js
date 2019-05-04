@@ -1,6 +1,8 @@
-import list from 'store/sagas/list';
-import post from 'store/sagas/post';
+// import listSaga from 'store/sagas/list';
+// import postSaga from 'store/sagas/post';
+import testSaga from 'store/sagas/test';
 
-import test from 'store/sagas/test';
-
-export default [list, post, test];
+export default [
+  // listSaga, postSaga,
+  testSaga
+];
