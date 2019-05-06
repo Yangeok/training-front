@@ -20,9 +20,8 @@ class PostContainer extends Component {
   //   };
 
   componentDidMount() {
-    const blog = 'blog';
-    this.props.getTests(blog);
-    // this._getTests();
+    const id = '1';
+    this.props.getTests(id);
     // this._getPosts();
     // this.timer = setInterval(this._progress, 20);
   }
@@ -43,15 +42,6 @@ class PostContainer extends Component {
   //     if (posts || paginationMeta) this.setState({ posts, paginationMeta });
   //   };
 
-  _getTests = () => {
-    const config = {
-      headers: { 'Access-Control-Allow-Origin': '*' }
-    };
-    const blog = 'blog';
-    const posts = this.props.getTests(blog);
-    return posts;
-  };
-
   // _getPosts = async () => {
   //   const posts = await this.props.getPosts(
   //     'https://training-log-back.herokuapp.com/blog/feed/1/100'
@@ -61,9 +51,7 @@ class PostContainer extends Component {
 
   //   _tableHead = () => {
   //     const tableHead = ['AUTHOR', 'TITLE', 'PUBDATE'];
-  //     return tableHead.map(head => {
-  //       return <TableCell>{head}</TableCell>;
-  //     });
+  //     return tableHead;
   //   };
 
   //   _isPosts = () => {
@@ -82,7 +70,7 @@ class PostContainer extends Component {
     return (
       <Paper className={classes.root}>
         {/* <Table>
-          <TableHead>{this._tableHead()}</TableHead>
+          <TableHeadForm>{this._tableHead()}</TableHeadForm>
           <TableBody>
             {isLoading ? (
               <LoadingForm completed={completed} classes={classes} />

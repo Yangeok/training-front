@@ -6,6 +6,9 @@ export { default as Footer } from 'components/layout/Footer';
 //COMMON
 export { default as LoadingForm } from 'components/common/Loading';
 export { default as PaginationForm } from 'components/common/Pagination';
+export { default as TableHeadForm } from 'components/common/TableHead';
+export { default as TableBodyForm } from 'components/common/TableBody';
+export { default as TableTemplateForm } from 'components/common/TableTemplate';
 
 export { default as FeedForm } from 'components/feed/';
 export { default as TestForm } from 'components/test/';
