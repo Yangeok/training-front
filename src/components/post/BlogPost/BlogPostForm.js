@@ -2,11 +2,6 @@ import React from 'react';
 import { TableRow, TableCell } from '@material-ui/core';
 import { PaginationForm } from 'components';
 
-const i = {
-  url: '/blog/feed/1/100',
-  tableHead: ['AUTHOR', 'TITLE', 'PUBDATE']
-};
-
 const BlogPostForm = ({ posts }) => {
   return (
     <>

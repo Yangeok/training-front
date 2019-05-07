@@ -3,28 +3,11 @@ import { GET_LISTS, REQUEST, SUCCESS, FAILURE } from 'store/constants';
 export default (state = {}, { type, payload }) => {
   switch (type) {
     case GET_LISTS[REQUEST]:
-      return {
-        ...state,
-        isLoading: true
-      };
+      return { ...state, isLoading: true };
     case GET_LISTS[SUCCESS]:
-      return payload.reduce(
-        (accumulator, currentValue) => ({
-          ...accumulator,
-          [currentValue._id]: {
-            ...currentValue
-          }
-        }),
-        {
-          ...state,
-          isLoading: false
-        }
-      );
+      return { ...state, isLoading: false, payload };
     case GET_LISTS[FAILURE]:
-      return {
-        ...state,
-        error: payload
-      };
+      return { ...state, isLoading: false, error: payload };
     default:
       return state;
   }

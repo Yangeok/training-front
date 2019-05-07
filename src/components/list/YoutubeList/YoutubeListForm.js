@@ -1,16 +1,22 @@
 import React from 'react';
-import { ListContainer } from 'containers';
+import { TableRow, TableCell } from '@material-ui/core';
+import { PaginationForm } from 'components';
 
-const i = {
-  url: '/youtube/1/100',
-  tableHead: ['NAME', 'DESCRIPTION']
-};
-
-const YoutubeListForm = () => {
+const YoutubeListForm = ({ lists }) => {
   return (
     <>
-      <h1>YoutubeList</h1>
-      <ListContainer url={i.url} tableHead={i.tableHead} />
+      {lists &&
+        lists.map(list => {
+          return (
+            <TableRow>
+              <TableCell key={list.name}>
+                <a href={list.url}>{list.name}</a>
+              </TableCell>
+              <TableCell>{list.desc}</TableCell>
+            </TableRow>
+          );
+        })}
+      <PaginationForm />
     </>
   );
 };

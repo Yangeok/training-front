@@ -3,7 +3,7 @@ import { getTests } from 'store/actions';
 import * as types from 'store/constants';
 import * as api from 'lib/tests';
 
-export function* fetchTests(url) {
+export function* fetchTests({ url }) {
   try {
     const data = yield call(api.tests, url);
     yield put(getTests.success(data));

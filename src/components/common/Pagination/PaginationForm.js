@@ -16,8 +16,6 @@ class PaginationForm extends Component {
 
   render() {
     const { offset } = this.state;
-    const { isLoading } = this.props;
-
     return (
       <MuiThemeProvider theme={theme}>
         <CssBaseline />

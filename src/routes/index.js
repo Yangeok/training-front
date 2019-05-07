@@ -44,7 +44,7 @@ const obj = [
 ];
 
 export const route = obj.map(({ path, page }) => (
-  <Route exact={true} path={path} component={page} />
+  <Route exact={true} path={path} component={page} key={path} />
 ));
 
 export const options = obj.map(({ path, name }) => (

@@ -1,9 +1,9 @@
-import { call, put, takeLatest } from 'redux-saga/effects';
+import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { getLists } from 'store/actions';
 import * as types from 'store/constants';
 import * as api from 'lib/lists';
 
-export function* fetchLists(url) {
+export function* fetchLists({ url }) {
   try {
     const data = yield call(api.lists, url);
     yield put(getLists.success(data));
@@ -11,6 +11,10 @@ export function* fetchLists(url) {
     yield put(getLists.failure(e.message));
   }
 }
-export default function* watchFetchLists() {
+export function* watchFetchLists() {
   yield takeLatest(types.GET_LISTS[types.REQUEST], fetchLists);
+}
+
+export default function* rootLists() {
+  yield all([watchFetchLists()]);
 }

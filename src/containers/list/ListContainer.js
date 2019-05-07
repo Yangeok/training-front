@@ -1,16 +1,7 @@
 import React, { Component } from 'react';
-import {
-  TableRow,
-  TableCell,
-  Table,
-  TableBody,
-  TableHead,
-  withStyles,
-  Paper
-} from '@material-ui/core';
+import { TableBody, withStyles, Table, Paper } from '@material-ui/core';
 import { styles } from './ListContainerStyle';
-import { PaginationForm, LoadingForm, BlogListForm } from 'components';
-import axios from 'axios';
+import { LoadingForm, BlogListForm, TableHeadForm } from 'components';
 import { connect } from 'react-redux';
 import { getLists } from 'store/actions';
 
@@ -19,50 +10,18 @@ class ListContainer extends Component {
     completed: 0
   };
 
-  // componentDidMount() {
-  //   this.timer = setInterval(this._progress, 20);
-  //   this._callListsApi();
-  // }
+  componentDidMount() {
+    this.props.getLists(1);
+    this.timer = setInterval(this._progress, 20);
+  }
 
   componentWillUnmount() {
     clearInterval(this.timer);
   }
 
-  _callListsApi = async () => {
-    const response = await axios.get(this.props.url);
-    const people = response.data.data;
-    if (people) this.setState({ people });
-  };
-
-  _isHead = () => {
-    const { tableHead } = this.props;
-    return (
-      tableHead &&
-      tableHead.map(head => {
-        return <TableCell>{head}</TableCell>;
-      })
-    );
-  };
-
-  _isLists = () => {
-    const { people } = this.state;
-    return people ? (
-      people.map(person => {
-        return (
-          <TableRow>
-            <TableCell key={person._id} value={person.name}>
-              <a href={person.url}>{person.name}</a>
-            </TableCell>
-            <TableCell>{person.desc}</TableCell>
-          </TableRow>
-        );
-      })
-    ) : (
-      <LoadingForm
-        completed={this.state.completed}
-        classes={this.props.classes}
-      />
-    );
+  _tableHead = () => {
+    const tableHead = ['AUTHOR', 'DESCRIPTION'];
+    return tableHead;
   };
 
   _progress = () => {
@@ -71,29 +30,29 @@ class ListContainer extends Component {
   };
 
   render() {
+    const { isLoading, classes, lists } = this.props;
+    const { completed } = this.state;
     return (
-      <Paper className={this.props.classes.root}>
-        {/* <div>totalDocs: {paginationMeta.totalDocs}</div>
-        <div>limit: {paginationMeta.limit}</div>
-        <div>page: {paginationMeta.page}</div>
-        <div>totalPages: {paginationMeta.totalPages}</div>
-        <div>pagingCounter: {paginationMeta.pagingCounter}</div>
-        <div>hasPrevPage: {paginationMeta.hasPrevPage}</div>
-        <div>hasNextPage: {paginationMeta.hasNextPage}</div>
-        <div>prevPage: {paginationMeta.prevPage}</div>
-        <div>nextPage: {paginationMeta.nextPage}</div> */}
+      <Paper className={classes.root}>
         <Table>
-          <TableHead>{this._isHead()}</TableHead>
-          <TableBody>{!this.props.isLoading && this._isLists()}</TableBody>
+          <TableHeadForm heads={this._tableHead()} />
+          <TableBody>
+            {isLoading ? (
+              <LoadingForm completed={completed} classes={classes} />
+            ) : (
+              <BlogListForm lists={lists} />
+            )}
+          </TableBody>
         </Table>
-        <PaginationForm callLists={this._callListsApi} url={this.props.url} />
       </Paper>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  isLoading: state.list.isLoading
+  isLoading: state.list.isLoading,
+  lists: state.list.payload,
+  error: state.post.error
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -104,7 +63,5 @@ const connectModule = connect(
   mapStateToProps,
   mapDispatchToProps
 )(ListContainer);
-
-//   export default withRouter(connectModule);
 
 export default withStyles(styles)(connectModule);

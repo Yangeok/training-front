@@ -1,10 +1,10 @@
 import React from 'react';
-import { BlogListForm } from 'components';
+import { ListContainer } from 'containers';
 
 const BlogList = () => {
   return (
     <>
-      <BlogListForm />
+      <ListContainer />
     </>
   );
 };
