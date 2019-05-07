@@ -8,6 +8,7 @@
     "@material-ui/styles": "^3.0.0-alpha.10",
     "axios": "^0.18.0",
     "cross-env": "^5.2.0",
+    "history": "^4.9.0",
     "material-ui-flat-pagination": "^3.2.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
