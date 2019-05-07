@@ -16,7 +16,6 @@ const YoutubeListForm = ({ lists }) => {
             </TableRow>
           );
         })}
-      <PaginationForm />
     </>
   );
 };

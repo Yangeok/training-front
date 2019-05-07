@@ -11,18 +11,8 @@ import {
 import { withStyles } from '@material-ui/core/styles';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { options } from 'routes';
-
-const styles = theme => ({
-  root: {
-    width: '100%'
-  },
-  title: {
-    textAlign: 'right'
-  },
-  progress: {
-    margin: theme.spacing.unit * 2
-  }
-});
+import { styles } from './HeaderStyle';
+import './Header.css';
 
 const ITEM_HEIGHT = 48;
 

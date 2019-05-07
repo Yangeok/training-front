@@ -48,5 +48,7 @@ export const route = obj.map(({ path, page }) => (
 ));
 
 export const options = obj.map(({ path, name }) => (
-  <Link to={path}>{name}</Link>
+  <Link className="header" to={path}>
+    {name}
+  </Link>
 ));

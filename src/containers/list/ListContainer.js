@@ -32,7 +32,6 @@ class ListContainer extends Component {
   render() {
     const { isLoading, classes, lists } = this.props;
     const { completed } = this.state;
-    console.log(this.props.history);
     return (
       <Paper className={classes.root}>
         <Table>

@@ -24,14 +24,22 @@ class PostContainer extends Component {
     return tableHead;
   };
 
+  _isBlog = () => {
+    const url = window.location.href;
+    if (url.indexOf('blog') !== -1) {
+      this.props.getPosts(1);
+    }
+  };
+
   _progress = () => {
     const { completed } = this.state;
     this.setState({ completed: completed >= 100 ? 0 : completed + 1 });
   };
 
   render() {
-    const { isLoading, classes, posts } = this.props;
+    const { isLoading, classes, posts, location, history, match } = this.props;
     const { completed } = this.state;
+    console.log(this.props);
     return (
       <Paper className={classes.root}>
         <Table>

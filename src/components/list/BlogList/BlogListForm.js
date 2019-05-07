@@ -16,7 +16,6 @@ const BlogListForm = ({ lists }) => {
             </TableRow>
           );
         })}
-      <PaginationForm />
     </>
   );
 };
