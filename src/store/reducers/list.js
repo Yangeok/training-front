@@ -1,4 +1,4 @@
-import { GET_LISTS, REQUEST, SUCCESS, FAILURE } from '../constants';
+import { GET_LISTS, REQUEST, SUCCESS, FAILURE } from 'store/constants';
 
 export default (state = {}, { type, payload }) => {
   switch (type) {

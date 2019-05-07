@@ -8,7 +8,6 @@ const i = {
 };
 
 const BlogPostForm = ({ posts }) => {
-  console.log(posts);
   return (
     <>
       {posts &&

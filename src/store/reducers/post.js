@@ -1,4 +1,4 @@
-import { GET_POSTS, REQUEST, SUCCESS, FAILURE } from '../constants';
+import { GET_POSTS, REQUEST, SUCCESS, FAILURE } from 'store/constants';
 
 const defaultState = {
   isLoading: false
@@ -11,7 +11,7 @@ export default (state = defaultState, action) => {
     case GET_POSTS[SUCCESS]:
       return { ...state, isLoading: false, payload: action.payload };
     case GET_POSTS[FAILURE]:
-      return { ...state, error: action.error };
+      return { ...state, isLoading: false, error: action.error };
     default:
       return state;
   }

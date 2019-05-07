@@ -10,11 +10,10 @@ class PageContainer extends Component {
   }
 
   _getLists = () => {
-    this.props.getLists('');
+    this.props.getLists();
   };
 
   render() {
-    const { isLoading, location, match } = this.props;
     return <h2>PageContainer</h2>;
   }
 }

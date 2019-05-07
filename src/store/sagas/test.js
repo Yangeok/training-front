@@ -1,4 +1,4 @@
-import { all, fork, call, put, take, takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import { getTests } from 'store/actions';
 import * as types from 'store/constants';
 import * as api from 'lib/tests';
@@ -15,7 +15,3 @@ export function* fetchTests(url) {
 export default function* watchFetchTests() {
   yield takeLatest(types.GET_TESTS[types.REQUEST], fetchTests);
 }
-
-// export default function*() {
-//   yield all([fork(watchFetchTests)]);
-// }
