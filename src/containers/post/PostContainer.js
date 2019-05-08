@@ -20,8 +20,7 @@ class PostContainer extends Component {
   }
 
   _tableHead = () => {
-    const tableHead = ['AUTHOR', 'TITLE', 'PUBDATE'];
-    return tableHead;
+    return ['AUTHOR', 'TITLE', 'PUBDATE'];
   };
 
   _isBlog = () => {
@@ -31,15 +30,16 @@ class PostContainer extends Component {
     }
   };
 
+  _is;
+
   _progress = () => {
     const { completed } = this.state;
     this.setState({ completed: completed >= 100 ? 0 : completed + 1 });
   };
 
   render() {
-    const { isLoading, classes, posts, location, history, match } = this.props;
+    const { isLoading, classes, posts, id } = this.props;
     const { completed } = this.state;
-    console.log(this.props);
     return (
       <Paper className={classes.root}>
         <Table>
@@ -48,7 +48,7 @@ class PostContainer extends Component {
             {isLoading ? (
               <LoadingForm completed={completed} classes={classes} />
             ) : (
-              <BlogPostForm posts={posts} />
+              <BlogPostForm posts={posts} id={id} />
             )}
           </TableBody>
         </Table>

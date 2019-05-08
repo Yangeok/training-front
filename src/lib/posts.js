@@ -6,5 +6,6 @@ export const posts = async id => {
     `${config.apiURL}blog/feed/${id}/20`,
     config.header
   );
+
   return response.data.data.docs;
 };

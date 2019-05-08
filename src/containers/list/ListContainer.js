@@ -20,8 +20,7 @@ class ListContainer extends Component {
   }
 
   _tableHead = () => {
-    const tableHead = ['AUTHOR', 'DESCRIPTION'];
-    return tableHead;
+    return ['AUTHOR', 'DESCRIPTION'];
   };
 
   _progress = () => {

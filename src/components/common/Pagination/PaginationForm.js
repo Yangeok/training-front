@@ -6,9 +6,7 @@ import Pagination from 'material-ui-flat-pagination';
 const theme = createMuiTheme();
 
 class PaginationForm extends Component {
-  state = {
-    offset: 0
-  };
+  state = { offset: 0 };
 
   _handleClick = offset => {
     this.setState({ offset });
@@ -16,14 +14,17 @@ class PaginationForm extends Component {
 
   render() {
     const { offset } = this.state;
+    console.log(offset);
     return (
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
         <Pagination
-          limit={10}
+          limit={20}
           offset={offset}
-          total={1000}
-          onClick={(e, offset) => this._handleClick(offset)}
+          total={300}
+          onClick={(e, offset) => {
+            this._handleClick(offset);
+          }}
         />
       </MuiThemeProvider>
     );

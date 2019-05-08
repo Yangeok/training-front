@@ -2,7 +2,7 @@ import React from 'react';
 import { TableRow, TableCell } from '@material-ui/core';
 import { PaginationForm } from 'components';
 
-const BlogPostForm = ({ posts }) => {
+const BlogPostForm = ({ posts, id }) => {
   return (
     <>
       {posts &&
@@ -19,7 +19,7 @@ const BlogPostForm = ({ posts }) => {
             </TableRow>
           );
         })}
-      <PaginationForm />
+      <PaginationForm id={id} />
     </>
   );
 };
