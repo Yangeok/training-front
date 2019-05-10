@@ -6,5 +6,6 @@ export const lists = async id => {
     `${config.apiURL}blog/${id}/20`,
     config.header
   );
+
   return response.data.data;
 };

@@ -1,11 +1,8 @@
 import axios from 'axios';
 import config from 'lib/config';
 
-export const posts = async id => {
-  const response = await axios.get(
-    `${config.apiURL}blog/feed/${id}/20`,
-    config.header
-  );
+export const posts = async url => {
+  const response = await axios.get(`${config.apiURL}${url}`, config.header);
 
   return response.data.data.docs;
 };

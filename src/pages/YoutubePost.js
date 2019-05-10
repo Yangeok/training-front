@@ -1,10 +1,15 @@
 import React from 'react';
-import { YoutubePostForm } from 'components';
+import { PostContainer } from 'containers';
 
-const YoutubePost = () => {
+const YoutubePost = ({ match, history, location }) => {
   return (
     <>
-      <YoutubePostForm />
+      <PostContainer
+        id={match.params.id}
+        history={history}
+        match={match}
+        location={location}
+      />
     </>
   );
 };

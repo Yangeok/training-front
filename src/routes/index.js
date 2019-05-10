@@ -22,22 +22,22 @@ const obj = [
     name: 'About'
   },
   {
-    path: '/blog/:id/100',
+    path: '/blog/:id/20',
     page: BlogList,
     name: 'BlogList'
   },
   {
-    path: '/blog/post/:id/100',
+    path: '/blog/post/:id/20',
     page: BlogPost,
     name: 'BlogPost'
   },
   {
-    path: '/youtube/:id/100',
+    path: '/youtube/:id/20',
     page: YoutubeList,
     name: 'YoutubeList'
   },
   {
-    path: '/youtube/post/:id/100',
+    path: '/youtube/post/:id/20',
     page: YoutubePost,
     name: 'YoutubePost'
   }

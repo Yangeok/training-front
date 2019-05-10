@@ -1,36 +1,67 @@
 import React, { Component } from 'react';
 import { TableBody, withStyles, Table, Paper } from '@material-ui/core';
 import { styles } from './PostContainerStyle';
-import { LoadingForm, BlogPostForm, TableHeadForm } from 'components';
+import {
+  LoadingForm,
+  BlogPostForm,
+  TableHeadForm,
+  PaginationForm
+} from 'components';
 import { connect } from 'react-redux';
 import { getPosts } from 'store/actions';
 
 class PostContainer extends Component {
   state = {
-    completed: 0
+    completed: 0,
+    pageId: 1
   };
 
   componentDidMount() {
-    this.props.getPosts(1);
+    this._getPlatformPosts();
     this.timer = setInterval(this._progress, 20);
   }
+
+  componentDidUpdate(prevProps, prevState) {}
 
   componentWillUnmount() {
     clearInterval(this.timer);
   }
 
-  _tableHead = () => {
-    return ['AUTHOR', 'TITLE', 'PUBDATE'];
+  _setPageId = () => {
+    const { id } = this.props.match.params;
+    this.setState({ pageId: id });
   };
 
-  _isBlog = () => {
-    const url = window.location.href;
-    if (url.indexOf('blog') !== -1) {
-      this.props.getPosts(1);
+  _getPlatformPosts = () => {
+    const { getPosts, location } = this.props;
+    const platform = location.pathname.split('/')[1];
+    const id = location.pathname.split('/')[3] !== ':id' ;
+
+    const isId = id !== ':id' ? id : 1;
+
+    if (platform.indexOf('blog') !== -1) {
+      getPosts(`blog/post/${isId}/20`);
+    } else {
+      getPosts(`youtube/post/${isId}/20`);
     }
   };
 
-  _is;
+  _pageOnClick = id => {
+    const { history, location } = this.props;
+    const platform = location.pathname.split('/')[1];
+
+    const isId = id !== ':id' ? id : 1;
+
+    if (platform.indexOf('blog') !== -1) {
+      history.push(`/blog/post/${isId}/20`);
+    } else {
+      history.push(`/youtube/post/${isId}/20`);
+    }
+  };
+
+  _tableHead = () => {
+    return ['AUTHOR', 'TITLE', 'PUBDATE'];
+  };
 
   _progress = () => {
     const { completed } = this.state;
@@ -48,10 +79,15 @@ class PostContainer extends Component {
             {isLoading ? (
               <LoadingForm completed={completed} classes={classes} />
             ) : (
-              <BlogPostForm posts={posts} id={id} />
+              <BlogPostForm posts={posts} />
             )}
           </TableBody>
         </Table>
+        <PaginationForm
+          id={id}
+          onClick={this._pageOnClick}
+          getPosts={this._getPlatformPosts}
+        />
       </Paper>
     );
   }
