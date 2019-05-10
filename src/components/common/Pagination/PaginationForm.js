@@ -5,20 +5,22 @@ import Pagination from 'material-ui-flat-pagination';
 
 const theme = createMuiTheme();
 
-const PaginationForm = ({ id, onClick, getPosts }) => {
+const PaginationForm = ({ id, onClick, total }) => {
   const offset = (id - 1) * 20;
-
   return (
     <MuiThemeProvider theme={theme}>
       <CssBaseline />
       <Pagination
         limit={20}
         offset={offset}
-        total={200}
+        total={total}
         onClick={(e, offset) => {
           onClick(offset / 20 + 1);
-          getPosts();
         }}
+        currentPageColor={'inherit'}
+        nextPageLabel={'>>'}
+        previousPageLabel={'<<'}
+        size={'large'}
       />
     </MuiThemeProvider>
   );

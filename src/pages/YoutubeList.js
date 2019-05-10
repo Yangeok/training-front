@@ -1,10 +1,14 @@
 import React from 'react';
-import { YoutubeListForm } from 'components';
+import { ListContainer } from 'containers';
 
-const YoutubeList = () => {
+const YoutubeList = ({ match, history, location }) => {
   return (
     <>
-      <YoutubeListForm />
+      <ListContainer
+        id={match.params.id}
+        history={history}
+        location={location}
+      />
     </>
   );
 };

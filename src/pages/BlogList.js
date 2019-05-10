@@ -1,10 +1,14 @@
 import React from 'react';
 import { ListContainer } from 'containers';
 
-const BlogList = () => {
+const BlogList = ({ match, history, location }) => {
   return (
     <>
-      <ListContainer />
+      <ListContainer
+        id={match.params.id}
+        history={history}
+        location={location}
+      />
     </>
   );
 };

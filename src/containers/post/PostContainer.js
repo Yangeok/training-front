@@ -12,8 +12,7 @@ import { getPosts } from 'store/actions';
 
 class PostContainer extends Component {
   state = {
-    completed: 0,
-    pageId: 1
+    completed: 0
   };
 
   componentDidMount() {
@@ -21,42 +20,25 @@ class PostContainer extends Component {
     this.timer = setInterval(this._progress, 20);
   }
 
-  componentDidUpdate(prevProps, prevState) {}
-
   componentWillUnmount() {
     clearInterval(this.timer);
   }
 
-  _setPageId = () => {
-    const { id } = this.props.match.params;
-    this.setState({ pageId: id });
-  };
-
   _getPlatformPosts = () => {
-    const { getPosts, location } = this.props;
+    const { getPosts, location, history } = this.props;
     const platform = location.pathname.split('/')[1];
-    const id = location.pathname.split('/')[3] !== ':id' ;
+    const id = location.pathname.split('/')[3];
 
-    const isId = id !== ':id' ? id : 1;
-
-    if (platform.indexOf('blog') !== -1) {
-      getPosts(`blog/post/${isId}/20`);
-    } else {
-      getPosts(`youtube/post/${isId}/20`);
-    }
+    const isId = id === ':id' ? history.push(`/${platform}/post/1/20`) : id;
+    getPosts(`${platform}/post/${isId}/20`);
   };
 
   _pageOnClick = id => {
-    const { history, location } = this.props;
+    const { getPosts, location, history } = this.props;
     const platform = location.pathname.split('/')[1];
 
-    const isId = id !== ':id' ? id : 1;
-
-    if (platform.indexOf('blog') !== -1) {
-      history.push(`/blog/post/${isId}/20`);
-    } else {
-      history.push(`/youtube/post/${isId}/20`);
-    }
+    history.push(`/${platform}/post/${id}/20`);
+    getPosts(`${platform}/post/${id}/20`);
   };
 
   _tableHead = () => {
@@ -69,7 +51,7 @@ class PostContainer extends Component {
   };
 
   render() {
-    const { isLoading, classes, posts, id } = this.props;
+    const { isLoading, classes, posts, id, total } = this.props;
     const { completed } = this.state;
     return (
       <Paper className={classes.root}>
@@ -83,11 +65,7 @@ class PostContainer extends Component {
             )}
           </TableBody>
         </Table>
-        <PaginationForm
-          id={id}
-          onClick={this._pageOnClick}
-          getPosts={this._getPlatformPosts}
-        />
+        <PaginationForm id={id} total={total} onClick={this._pageOnClick} />
       </Paper>
     );
   }
@@ -95,6 +73,7 @@ class PostContainer extends Component {
 const mapStateToProps = state => ({
   isLoading: state.post.isLoading,
   posts: state.post.payload,
+  total: state.post.pageMeta,
   error: state.post.error
 });
 

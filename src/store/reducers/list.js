@@ -5,7 +5,11 @@ export default (state = {}, { type, payload }) => {
     case GET_LISTS[REQUEST]:
       return { ...state, isLoading: true };
     case GET_LISTS[SUCCESS]:
-      return { ...state, isLoading: false, payload };
+      return {
+        ...state,
+        isLoading: false,
+        payload
+      };
     case GET_LISTS[FAILURE]:
       return { ...state, isLoading: false, error: payload };
     default:

@@ -11,13 +11,22 @@ class ListContainer extends Component {
   };
 
   componentDidMount() {
-    this.props.getLists(1);
+    this._getPlatformLists();
     this.timer = setInterval(this._progress, 20);
   }
 
   componentWillUnmount() {
     clearInterval(this.timer);
   }
+
+  _getPlatformLists = () => {
+    const { getLists, location, history } = this.props;
+    const platform = location.pathname.split('/')[1];
+    const id = location.pathname.split('/')[2];
+
+    const isId = id === ':id' ? history.push(`/${platform}/1/20`) : 1;
+    getLists(`${platform}/${isId}/20`);
+  };
 
   _tableHead = () => {
     return ['AUTHOR', 'DESCRIPTION'];

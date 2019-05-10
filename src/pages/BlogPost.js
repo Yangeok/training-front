@@ -7,7 +7,6 @@ const BlogPost = ({ match, history, location }) => {
       <PostContainer
         id={match.params.id}
         history={history}
-        match={match}
         location={location}
       />
     </>

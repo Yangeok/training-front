@@ -5,7 +5,12 @@ export default (state = {}, { type, payload }) => {
     case GET_POSTS[REQUEST]:
       return { ...state, isLoading: true };
     case GET_POSTS[SUCCESS]:
-      return { ...state, isLoading: false, payload };
+      return {
+        ...state,
+        isLoading: false,
+        payload: payload.docs,
+        pageMeta: payload.totalDocs
+      };
     case GET_POSTS[FAILURE]:
       return { ...state, isLoading: false, error: payload };
     default:
