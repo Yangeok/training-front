@@ -12,7 +12,6 @@ import { withStyles } from '@material-ui/core/styles';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { options } from 'routes';
 import { styles } from './HeaderStyle';
-import './Header.css';
 
 const ITEM_HEIGHT = 48;
 
@@ -34,35 +33,34 @@ const Header = props => {
     <div className={classes.root}>
       <AppBar position="static" color="default">
         <Toolbar>
-          <Typography variant="h6" color="inherit">
-            <IconButton
-              aria-label="More"
-              aria-owns={open ? 'long-menu' : undefined}
-              aria-haspopup="true"
-              onClick={handleClick}>
-              <MoreVertIcon />
-            </IconButton>
-            <Menu
-              id="long-menu"
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              PaperProps={{
-                style: {
-                  maxHeight: ITEM_HEIGHT * 4.5,
-                  width: 200
-                }
-              }}>
-              {options.map(option => (
-                <MenuItem
-                  key={option}
-                  selected={option === null}
-                  onClick={handleClose}>
-                  {option}
-                </MenuItem>
-              ))}
-            </Menu>
-          </Typography>
+          <IconButton
+            aria-label="More"
+            aria-owns={open ? 'long-menu' : undefined}
+            aria-haspopup="true"
+            onClick={handleClick}>
+            <MoreVertIcon />
+          </IconButton>
+          <Menu
+            id="long-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            PaperProps={{
+              style: {
+                maxHeight: ITEM_HEIGHT * 10,
+                width: 200
+              }
+            }}>
+            {options.map(option => (
+              <MenuItem
+                key={option}
+                selected={option === null}
+                onClick={handleClose}>
+                {option}
+              </MenuItem>
+            ))}
+          </Menu>
+          <Typography variant="h6" color="inherit" className={classes.grow} />
         </Toolbar>
       </AppBar>
     </div>

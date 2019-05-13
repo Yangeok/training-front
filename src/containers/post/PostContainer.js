@@ -9,6 +9,7 @@ import {
 } from 'components';
 import { connect } from 'react-redux';
 import { getPosts } from 'store/actions';
+import './PostContainer.css';
 
 class PostContainer extends Component {
   state = {
@@ -42,7 +43,7 @@ class PostContainer extends Component {
   };
 
   _tableHead = () => {
-    return ['AUTHOR', 'TITLE', 'PUBDATE'];
+    return ['AUTHOR', 'TITLE', 'DATE'];
   };
 
   _progress = () => {
@@ -54,19 +55,27 @@ class PostContainer extends Component {
     const { isLoading, classes, posts, id, total } = this.props;
     const { completed } = this.state;
     return (
-      <Paper className={classes.root}>
-        <Table>
-          <TableHeadForm heads={this._tableHead()} />
-          <TableBody>
-            {isLoading ? (
-              <LoadingForm completed={completed} classes={classes} />
-            ) : (
-              <BlogPostForm posts={posts} />
-            )}
-          </TableBody>
-        </Table>
-        <PaginationForm id={id} total={total} onClick={this._pageOnClick} />
-      </Paper>
+      <>
+        <Paper className={classes.root}>
+          <Table>
+            <TableHeadForm
+              className={classes.table}
+              heads={this._tableHead()}
+            />
+            <TableBody>
+              {isLoading ? (
+                <LoadingForm
+                  completed={completed}
+                  progress={classes.progress}
+                />
+              ) : (
+                <BlogPostForm posts={posts} />
+              )}
+            </TableBody>
+          </Table>
+          <PaginationForm id={id} total={total} onClick={this._pageOnClick} />
+        </Paper>
+      </>
     );
   }
 }

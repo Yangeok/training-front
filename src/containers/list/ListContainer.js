@@ -41,18 +41,20 @@ class ListContainer extends Component {
     const { isLoading, classes, lists } = this.props;
     const { completed } = this.state;
     return (
-      <Paper className={classes.root}>
-        <Table>
-          <TableHeadForm heads={this._tableHead()} />
-          <TableBody>
-            {isLoading ? (
-              <LoadingForm completed={completed} classes={classes} />
-            ) : (
-              <BlogListForm lists={lists} />
-            )}
-          </TableBody>
-        </Table>
-      </Paper>
+      <>
+        <Paper className={classes.root}>
+          <Table>
+            <TableHeadForm heads={this._tableHead()} />
+            <TableBody>
+              {isLoading ? (
+                <LoadingForm completed={completed} classes={classes} />
+              ) : (
+                <BlogListForm lists={lists} />
+              )}
+            </TableBody>
+          </Table>
+        </Paper>
+      </>
     );
   }
 }

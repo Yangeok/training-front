@@ -4,14 +4,16 @@ import { Helmet } from 'react-helmet';
 import { Header, Footer } from 'components';
 import { route } from 'routes';
 
+const title = 'Training-log';
+
 const App = () => {
   return (
     <>
       <Helmet>
-        <title>Training-log</title>
+        <title>{title}</title>
         <meta name="description" content="Trainging blog & youtube" />
       </Helmet>
-      <Header />
+      <Header title={title} />
       <Switch>{route}</Switch>
       <Footer />
     </>
