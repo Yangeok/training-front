@@ -30,13 +30,18 @@ class PostContainer extends Component {
     clearInterval(this.timer);
   }
 
-  _getPlatformPosts = () => {
-    const { getPosts, location, history } = this.props;
-    const platform = location.pathname.split('/')[1];
-    const id = location.pathname.split('/')[3];
+  _getPlatformPosts = async () => {
+    const { getPosts, match, history } = this.props;
+    const platform = match.url.split('/')[1];
+    let { id } = match.params;
 
-    const isId = id === ':id' ? history.push(`/${platform}/post/1/20`) : id;
-    getPosts(`${platform}/post/${isId}/20`);
+    const isId = typeof id !== Number;
+    if (isId) {
+      id = 1;
+      history.push(`/${platform}/post/1/20`);
+    }
+
+    getPosts(`${platform}/post/${id}/20`);
   };
 
   _pageOnClick = id => {

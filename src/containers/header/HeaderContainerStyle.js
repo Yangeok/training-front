@@ -4,6 +4,6 @@ export const styles = theme => ({
   },
   paperProps: {
     maxHeight: 48 * 10,
-    width: 200
+    width: '100%'
   }
 });

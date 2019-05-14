@@ -1,7 +1,8 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { Header, Footer } from 'components';
+import { Footer, NoMatchForm } from 'components';
+import { HeaderContainer } from 'containers';
 import { route } from 'routes';
 
 const title = 'Training-log';
@@ -13,8 +14,11 @@ const App = () => {
         <title>{title}</title>
         <meta name="description" content="Trainging blog & youtube" />
       </Helmet>
-      <Header title={title} />
-      <Switch>{route}</Switch>
+      <HeaderContainer title={title} />
+      <Switch>
+        {route}
+        <Route component={NoMatchForm} />
+      </Switch>
       <Footer />
     </>
   );

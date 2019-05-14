@@ -11,6 +11,7 @@ const BlogPost = ({ match, history, location }) => {
         id={match.params.id}
         history={history}
         location={location}
+        match={match}
       />
     </>
   );
