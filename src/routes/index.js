@@ -17,27 +17,27 @@ const obj = [
     name: 'Home'
   },
   {
-    path: '/about',
+    path: '/about/',
     page: About,
     name: 'About'
   },
   {
-    path: '/blog/:id/20',
+    path: '/blog/:id/20/',
     page: BlogList,
     name: 'BlogList'
   },
   {
-    path: '/blog/post/:id/20',
+    path: '/blog/post/:id/20/',
     page: BlogPost,
     name: 'BlogPost'
   },
   {
-    path: '/youtube/:id/20',
+    path: '/youtube/:id/20/',
     page: YoutubeList,
     name: 'YoutubeList'
   },
   {
-    path: '/youtube/post/:id/20',
+    path: '/youtube/post/:id/20/',
     page: YoutubePost,
     name: 'YoutubePost'
   }

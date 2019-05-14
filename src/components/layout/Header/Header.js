@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import {
   Toolbar,
   AppBar,
@@ -13,11 +12,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { options } from 'routes';
 import { styles } from './HeaderStyle';
 
-const ITEM_HEIGHT = 48;
-
-const Header = props => {
-  const { classes } = props;
-
+const Header = ({ classes, title }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -45,12 +40,7 @@ const Header = props => {
             anchorEl={anchorEl}
             open={open}
             onClose={handleClose}
-            PaperProps={{
-              style: {
-                maxHeight: ITEM_HEIGHT * 10,
-                width: 200
-              }
-            }}>
+            PaperProps={classes.paperProps}>
             {options.map(option => (
               <MenuItem
                 key={option}
@@ -60,15 +50,13 @@ const Header = props => {
               </MenuItem>
             ))}
           </Menu>
-          <Typography variant="h6" color="inherit" className={classes.grow} />
+          <Typography variant="h5" color="inherit" className={classes.grow}>
+            {title.toUpperCase()}
+          </Typography>
         </Toolbar>
       </AppBar>
     </div>
   );
-};
-
-Header.propTypes = {
-  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(Header);

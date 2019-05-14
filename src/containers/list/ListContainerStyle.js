@@ -11,10 +11,10 @@ export const styles = theme => ({
       display: 'flex',
       justifyContent: 'space-between',
       '&::before': {
-        color: 'black',
+        color: 'rgba(0, 0, 0, 0.54)',
         textAlign: 'left',
         fontSize: '0.75rem',
-        fontWeight: '600',
+        fontWeight: '500',
         content: 'attr(data-label)'
       },
       '&:first-child': {

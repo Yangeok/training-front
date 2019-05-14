@@ -2,10 +2,8 @@ export const styles = theme => ({
   root: {
     width: '100%'
   },
-  title: {
-    textAlign: 'right'
-  },
-  progress: {
-    margin: theme.spacing.unit * 2
+  paperProps: {
+    maxHeight: 48 * 10,
+    width: 200
   }
 });
