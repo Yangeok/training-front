@@ -80,10 +80,14 @@ class PostContainer extends Component {
               <PostForm table={classes.tableCell} posts={posts} />
             )}
           </TableBody>
-          <TableFooter>
-            <PaginationForm id={id} total={total} onClick={this._pageOnClick} />
-          </TableFooter>
+          <TableFooter />
         </Table>
+        <PaginationForm
+          pagination={classes.pagination}
+          id={id}
+          total={total}
+          onClick={this._pageOnClick}
+        />
       </>
     );
   }

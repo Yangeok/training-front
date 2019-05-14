@@ -29,5 +29,9 @@ export const styles = theme => ({
   },
   progress: {
     margin: theme.spacing.unit * 10
+  },
+  pagination: {
+    textAlign: 'center',
+    [theme.breakpoints.down('sm')]: {}
   }
 });

@@ -4,7 +4,7 @@ import Pagination from 'material-ui-flat-pagination';
 
 const theme = createMuiTheme();
 
-const PaginationForm = ({ id, onClick, total }) => {
+const PaginationForm = ({ id, onClick, total, pagination }) => {
   const offset = (id - 1) * 20;
   return (
     <MuiThemeProvider theme={theme}>
@@ -18,7 +18,9 @@ const PaginationForm = ({ id, onClick, total }) => {
         currentPageColor={'inherit'}
         nextPageLabel={'>>'}
         previousPageLabel={'<<'}
-        size={'large'}
+        outerButtonCount={1}
+        innerButtonCount={1}
+        className={pagination}
       />
     </MuiThemeProvider>
   );
