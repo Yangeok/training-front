@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import { TableBody, withStyles, Table, Paper } from '@material-ui/core';
+import {
+  TableBody,
+  TableHead,
+  withStyles,
+  Table,
+  Paper,
+  TableFooter
+} from '@material-ui/core';
 import { styles } from './PostContainerStyle';
 import {
   LoadingForm,
@@ -58,10 +65,12 @@ class PostContainer extends Component {
       <>
         <Paper className={classes.root}>
           <Table>
-            <TableHeadForm
-              className={classes.table}
-              heads={this._tableHead()}
-            />
+            <TableHead>
+              <TableHeadForm
+                table={classes.tableHead}
+                heads={this._tableHead()}
+              />
+            </TableHead>
             <TableBody>
               {isLoading ? (
                 <LoadingForm
@@ -69,11 +78,21 @@ class PostContainer extends Component {
                   progress={classes.progress}
                 />
               ) : (
-                <BlogPostForm posts={posts} />
+                <BlogPostForm
+                  tableRow={classes.tableRow}
+                  tableCell={classes.tableCell}
+                  posts={posts}
+                />
               )}
             </TableBody>
+            <TableFooter>
+              <PaginationForm
+                id={id}
+                total={total}
+                onClick={this._pageOnClick}
+              />
+            </TableFooter>
           </Table>
-          <PaginationForm id={id} total={total} onClick={this._pageOnClick} />
         </Paper>
       </>
     );

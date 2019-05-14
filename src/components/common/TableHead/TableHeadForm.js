@@ -1,13 +1,17 @@
 import React from 'react';
-import { TableCell } from '@material-ui/core';
+import { TableCell, TableRow } from '@material-ui/core';
 
-const TableHeadForm = ({ heads }) => {
+const TableHeadForm = ({ heads, table }) => {
   return (
-    <>
+    <TableRow>
       {heads.map(head => {
-        return <TableCell key={head}>{head}</TableCell>;
+        return (
+          <TableCell className={table} key={head}>
+            {head}
+          </TableCell>
+        );
       })}
-    </>
+    </TableRow>
   );
 };
 

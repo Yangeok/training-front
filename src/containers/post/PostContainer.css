@@ -1,3 +1,5 @@
-td .MuiTableCell-root-106 {
-  padding: 0 0 0 0;
+@media screen and (max-width: 768px) {
+  thead {
+    display: none;
+  }
 }
