@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { TableBody, withStyles, Table, Paper } from '@material-ui/core';
+import { TableBody, withStyles, Table, TableHead } from '@material-ui/core';
 import { styles } from './ListContainerStyle';
-import { LoadingForm, BlogListForm, TableHeadForm } from 'components';
+import { LoadingForm, ListForm, TableHeadForm } from 'components';
 import { connect } from 'react-redux';
 import { getLists } from 'store/actions';
 
@@ -42,18 +42,21 @@ class ListContainer extends Component {
     const { completed } = this.state;
     return (
       <>
-        <Paper className={classes.root}>
-          <Table>
-            <TableHeadForm heads={this._tableHead()} />
-            <TableBody>
-              {isLoading ? (
-                <LoadingForm completed={completed} classes={classes} />
-              ) : (
-                <BlogListForm lists={lists} />
-              )}
-            </TableBody>
-          </Table>
-        </Paper>
+        <Table>
+          <TableHead>
+            <TableHeadForm
+              table={classes.tableHead}
+              heads={this._tableHead()}
+            />
+          </TableHead>
+          <TableBody>
+            {isLoading ? (
+              <LoadingForm completed={completed} classes={classes} />
+            ) : (
+              <ListForm table={classes.tableCell} lists={lists} />
+            )}
+          </TableBody>
+        </Table>
       </>
     );
   }

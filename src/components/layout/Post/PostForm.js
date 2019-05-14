@@ -1,23 +1,20 @@
 import React from 'react';
 import { TableRow, TableCell } from '@material-ui/core';
 
-const BlogPostForm = ({ posts, tableCell, tableRow }) => {
+const PostForm = ({ posts, table }) => {
   return (
     <>
       {posts &&
         posts.map(post => {
           return (
-            <TableRow tableRow={tableRow}>
-              <TableCell
-                data-label="AUTHOR"
-                className={tableCell}
-                key={post.title}>
+            <TableRow>
+              <TableCell data-label="AUTHOR" className={table} key={post.title}>
                 {post.creator}
               </TableCell>
-              <TableCell data-label="TITLE" className={tableCell}>
+              <TableCell data-label="TITLE" className={table}>
                 <a href={post.link}>{post.title}</a>
               </TableCell>
-              <TableCell data-label="DATE" className={tableCell}>
+              <TableCell data-label="DATE" className={table}>
                 {post.pubDate.substring(0, 10)}
               </TableCell>
             </TableRow>
@@ -27,4 +24,4 @@ const BlogPostForm = ({ posts, tableCell, tableRow }) => {
   );
 };
 
-export default BlogPostForm;
+export default PostForm;

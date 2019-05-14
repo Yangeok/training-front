@@ -1,31 +1,29 @@
 export const styles = theme => ({
-  root: {
-    width: 'auto',
-    marginTop: theme.spacing.unit * 3,
-    overflowX: 'auto',
-    [theme.breakpoints.down('sm')]: {
-      marginBottom: '1rem'
-    }
-  },
   tableHead: {
     [theme.breakpoints.down('sm')]: {
       display: 'none'
     }
   },
-  tableRow: {
-    [theme.breakpoints.down('sm')]: {}
-  },
   tableCell: {
     [theme.breakpoints.down('sm')]: {
-      display: 'block',
       padding: '10px 10px 10px 10px',
       textAlign: 'right',
+      display: 'flex',
+      justifyContent: 'space-between',
       '&::before': {
-        color: 'rgba(0, 0, 0, 0.54)',
+        color: 'black',
+        textAlign: 'left',
         fontSize: '0.75rem',
-        fontWeight: '500',
-        display: 'flex',
+        fontWeight: '600',
         content: 'attr(data-label)'
+      },
+      '&:first-child': {
+        borderTop: '1px solid rgba(200, 200, 200, 1)'
+      },
+      '&:last-child': {
+        paddingRight: '10px',
+        marginBottom: '1rem',
+        borderBottom: '1px solid rgba(200, 200, 200, 1)'
       }
     }
   },

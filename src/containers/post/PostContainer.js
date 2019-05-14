@@ -4,19 +4,17 @@ import {
   TableHead,
   withStyles,
   Table,
-  Paper,
   TableFooter
 } from '@material-ui/core';
 import { styles } from './PostContainerStyle';
 import {
   LoadingForm,
-  BlogPostForm,
+  PostForm,
   TableHeadForm,
   PaginationForm
 } from 'components';
 import { connect } from 'react-redux';
 import { getPosts } from 'store/actions';
-import './PostContainer.css';
 
 class PostContainer extends Component {
   state = {
@@ -63,37 +61,24 @@ class PostContainer extends Component {
     const { completed } = this.state;
     return (
       <>
-        <Paper className={classes.root}>
-          <Table>
-            <TableHead>
-              <TableHeadForm
-                table={classes.tableHead}
-                heads={this._tableHead()}
-              />
-            </TableHead>
-            <TableBody>
-              {isLoading ? (
-                <LoadingForm
-                  completed={completed}
-                  progress={classes.progress}
-                />
-              ) : (
-                <BlogPostForm
-                  tableRow={classes.tableRow}
-                  tableCell={classes.tableCell}
-                  posts={posts}
-                />
-              )}
-            </TableBody>
-            <TableFooter>
-              <PaginationForm
-                id={id}
-                total={total}
-                onClick={this._pageOnClick}
-              />
-            </TableFooter>
-          </Table>
-        </Paper>
+        <Table>
+          <TableHead>
+            <TableHeadForm
+              table={classes.tableHead}
+              heads={this._tableHead()}
+            />
+          </TableHead>
+          <TableBody>
+            {isLoading ? (
+              <LoadingForm completed={completed} progress={classes.progress} />
+            ) : (
+              <PostForm table={classes.tableCell} posts={posts} />
+            )}
+          </TableBody>
+          <TableFooter>
+            <PaginationForm id={id} total={total} onClick={this._pageOnClick} />
+          </TableFooter>
+        </Table>
       </>
     );
   }
