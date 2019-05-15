@@ -3,7 +3,9 @@ export const styles = theme => ({
     [theme.breakpoints.up('sm')]: {
       maxWidth: '95%',
       margin: 'auto'
-    }
+    },
+    maxWidth: '90%',
+    margin: 'auto'
   },
   tableHead: {
     [theme.breakpoints.down('sm')]: {
