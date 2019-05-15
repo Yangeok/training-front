@@ -23,9 +23,13 @@ export const styles = theme => ({
     margin: '10px'
   },
   gridContent: {
-    margin: '10px 10px 40px 10px'
+    margin: '10px 10px 40px 10px',
+    fontSize: '13px'
   },
-  gridUl: {
-    padding: '10px'
+  gridList: {
+    paddingBottom: '10px'
+  },
+  progress: {
+    margin: theme.spacing.unit * 10
   }
 });
