@@ -17,7 +17,7 @@ const App = () => {
       <HeaderContainer title={title} />
       <Switch>
         {route}
-        <Route component={NoMatchForm} />
+        {/* <Route component={NoMatchForm} /> */}
       </Switch>
       <Footer />
     </>
