@@ -18,16 +18,20 @@ export const styles = theme => ({
         content: 'attr(data-label)'
       },
       '&:first-child': {
-        borderTop: '1px solid rgba(200, 200, 200, 1)'
+        borderTop: '1px solid rgba(225, 225, 225, 1)'
       },
       '&:last-child': {
         paddingRight: '10px',
-        marginBottom: '1rem',
-        borderBottom: '1px solid rgba(200, 200, 200, 1)'
+        marginBottom: '1rem'
+        // borderBottom: '1px solid rgba(200, 200, 200, 1)'
       }
     }
   },
   progress: {
     margin: theme.spacing.unit * 10
+  },
+  pagination: {
+    textAlign: 'center',
+    [theme.breakpoints.down('sm')]: {}
   }
 });

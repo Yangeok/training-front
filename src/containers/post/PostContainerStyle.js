@@ -14,16 +14,16 @@ export const styles = theme => ({
         color: 'rgba(0, 0, 0, 0.54)',
         textAlign: 'left',
         fontSize: '0.75rem',
-        fontWeight: '600',
+        fontWeight: '500',
         content: 'attr(data-label)'
       },
       '&:first-child': {
-        borderTop: '1px solid rgba(200, 200, 200, 1)'
+        borderTop: '1px solid rgba(225, 225, 225, 1)'
       },
       '&:last-child': {
         paddingRight: '10px',
-        marginBottom: '1rem',
-        borderBottom: '1px solid rgba(200, 200, 200, 1)'
+        marginBottom: '1rem'
+        // borderBottom: '1px solid rgba(200, 200, 200, 1)'
       }
     }
   },
