@@ -6,7 +6,7 @@ export const styles = theme => ({
   },
   tableCell: {
     [theme.breakpoints.down('sm')]: {
-      padding: '10px 10px 10px 10px',
+      padding: '5px 10px 5px 10px',
       textAlign: 'right',
       display: 'flex',
       justifyContent: 'space-between',

@@ -38,18 +38,18 @@ class PostContainer extends Component {
     const isId = typeof id !== Number;
     if (isId) {
       id = 1;
-      history.push(`/${platform}/post/1/20`);
+      history.push(`/${platform}/post/1/15`);
     }
 
-    getPosts(`${platform}/post/${id}/20`);
+    getPosts(`${platform}/post/${id}/15`);
   };
 
   _pageOnClick = id => {
     const { getPosts, location, history } = this.props;
     const platform = location.pathname.split('/')[1];
 
-    history.push(`/${platform}/post/${id}/20`);
-    getPosts(`${platform}/post/${id}/20`);
+    history.push(`/${platform}/post/${id}/15`);
+    getPosts(`${platform}/post/${id}/15`);
   };
 
   _tableHead = () => {

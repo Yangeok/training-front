@@ -24,8 +24,8 @@ class ListContainer extends Component {
     const platform = location.pathname.split('/')[1];
     const id = location.pathname.split('/')[2];
 
-    const isId = id === ':id' ? history.push(`/${platform}/1/20`) : 1;
-    getLists(`${platform}/${isId}/20`);
+    const isId = id === ':id' ? history.push(`/${platform}/1/1`) : 1;
+    getLists(`${platform}/${isId}/1`);
   };
 
   _tableHead = () => {

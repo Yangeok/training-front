@@ -8,4 +8,3 @@ export { default as PostForm } from 'components/layout/Post';
 export { default as LoadingForm } from 'components/common/Loading';
 export { default as PaginationForm } from 'components/common/Pagination';
 export { default as TableHeadForm } from 'components/common/TableHead';
-export { default as NoMatchForm } from 'components/common/NoMatch';
