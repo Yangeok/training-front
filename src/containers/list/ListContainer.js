@@ -41,7 +41,7 @@ class ListContainer extends Component {
     const { isLoading, classes, lists } = this.props;
     const { completed } = this.state;
     return (
-      <>
+      <div className={classes.divContent}>
         <Table>
           <TableHead>
             <TableHeadForm
@@ -57,7 +57,7 @@ class ListContainer extends Component {
             )}
           </TableBody>
         </Table>
-      </>
+      </div>
     );
   }
 }

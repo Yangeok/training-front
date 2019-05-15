@@ -1,8 +1,14 @@
-.margin {
-  margin-left: 10px;
+.main {
+  max-width: 95%;
+  margin: 1rem 0 1rem 1rem;
 }
 
 img {
   max-width: 100%;
   height: auto;
+}
+
+.footer {
+  max-width: 95%;
+  margin: 1rem 0 1rem 1rem;
 }

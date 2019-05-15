@@ -3,8 +3,12 @@ import React from 'react';
 const Footer = () => {
   return (
     <div>
-      <p /> © {new Date().getFullYear()}, Built by {``}
-      <a href="https://yangeok.github.io/">Yangeok</a>
+      <p />
+      <div className="footer">
+        {' '}
+        © {new Date().getFullYear()}, Built by {``}
+        <a href="https://yangeok.github.io/">Yangeok</a>
+      </div>
     </div>
   );
 };

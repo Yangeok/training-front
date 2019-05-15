@@ -1,4 +1,10 @@
 export const styles = theme => ({
+  divContent: {
+    [theme.breakpoints.up('sm')]: {
+      maxWidth: '95%',
+      margin: 'auto'
+    }
+  },
   tableHead: {
     [theme.breakpoints.down('sm')]: {
       display: 'none'

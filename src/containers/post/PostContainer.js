@@ -65,7 +65,7 @@ class PostContainer extends Component {
     const { isLoading, classes, posts, id, total } = this.props;
     const { completed } = this.state;
     return (
-      <>
+      <div className={classes.divContent}>
         <Table>
           <TableHead>
             <TableHeadForm
@@ -88,7 +88,7 @@ class PostContainer extends Component {
           total={total}
           onClick={this._pageOnClick}
         />
-      </>
+      </div>
     );
   }
 }

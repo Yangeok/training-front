@@ -1,6 +1,9 @@
 export const styles = theme => ({
-  root: {
-    flexGrow: 1
+  divContent: {
+    [theme.breakpoints.up('sm')]: {
+      maxWidth: '97%',
+      margin: 'auto'
+    }
   },
   paper: {
     padding: theme.spacing.unit * 1,
@@ -14,7 +17,6 @@ export const styles = theme => ({
     display: 'flex'
   },
   gridSub: {
-    [theme.breakpoints.down('sm')]: {},
     margin: '15px'
   },
   gridItem: {
