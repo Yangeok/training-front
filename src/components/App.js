@@ -1,9 +1,10 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Router, HashRouter, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { Footer, NoMatchForm } from 'components';
 import { HeaderContainer } from 'containers';
 import { route } from 'routes';
+import { Home } from 'pages';
 
 const title = 'Training-log';
 

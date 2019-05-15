@@ -12,7 +12,7 @@ import {
 
 const obj = [
   {
-    path: '/#/',
+    path: '/',
     page: Home,
     name: 'Home'
   },
