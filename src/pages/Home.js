@@ -1,4 +1,5 @@
 import React from 'react';
+import { HomeContainer } from 'containers';
 import 'assets/styles/page.css';
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
     <>
       <h3 className="margin">메인</h3>
       <span className="margin">메인페이지</span>
+      <HomeContainer />
     </>
   );
 };
