@@ -1,18 +1,18 @@
-.main {
+/* 공통 */
+.main-description {
   max-width: 95%;
   margin: 1rem 0 1rem 1rem;
 }
-
 img {
   max-width: 100%;
   height: auto;
 }
-
 .footer {
   max-width: 95%;
   margin: 1rem 0 1rem 1rem;
 }
 
+/* 페이지 링크 색상 */
 a {
   color: #3273dc;
   text-decoration: none;
@@ -21,16 +21,17 @@ a:hover {
   color: #7957d5;
 }
 
+/* 메인 컴포넌트 */
 .grid-content {
   margin: 10px 10px 40px 10px;
   font-size: 13px;
 }
-
 .grid-list {
   padding-bottom: 10px;
   margin-left: -15px;
 }
 
+/* 로딩 컴포넌트 */
 .progress-bar {
   display: flex;
   justify-content: center;

@@ -5,8 +5,8 @@ import 'assets/styles/page.css';
 const YoutubeList = ({ match, history, location }) => {
   return (
     <>
-      <h3 className="main">유튜브 목록</h3>
-      <div className="main">유튜브를 가나다 순으로 표시합니다.</div>
+      <h3 className="main-decsription">유튜브 목록</h3>
+      <div className="main-decsription">유튜브를 가나다 순으로 표시합니다.</div>
       <ListContainer
         id={match.params.id}
         history={history}

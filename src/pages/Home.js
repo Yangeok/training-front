@@ -5,7 +5,7 @@ import 'assets/styles/page.css';
 const Home = () => {
   return (
     <>
-      <h3 className="main">최신피드</h3>
+      <h3 className="main-description">최신피드</h3>
       <HomeContainer />
     </>
   );
