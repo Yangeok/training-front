@@ -84,12 +84,14 @@ class PostContainer extends Component {
             </>
           )}
         </Table>
-        <PaginationForm
-          pagination={classes.pagination}
-          id={id}
-          total={total}
-          onClick={this._pageOnClick}
-        />
+        {!isLoading && (
+          <PaginationForm
+            pagination={classes.pagination}
+            id={id}
+            total={total}
+            onClick={this._pageOnClick}
+          />
+        )}
       </div>
     );
   }
