@@ -31,15 +31,10 @@ export const styles = theme => ({
       '&:last-child': {
         paddingRight: '10px',
         marginBottom: '1rem'
-        // borderBottom: '1px solid rgba(200, 200, 200, 1)'
       }
     }
   },
-  progress: {
-    margin: theme.spacing.unit * 10
-  },
   pagination: {
-    textAlign: 'center',
-    [theme.breakpoints.down('sm')]: {}
+    textAlign: 'center'
   }
 });

@@ -43,19 +43,21 @@ class ListContainer extends Component {
     return (
       <div className={classes.divContent}>
         <Table>
-          <TableHead>
-            <TableHeadForm
-              table={classes.tableHead}
-              heads={this._tableHead()}
-            />
-          </TableHead>
-          <TableBody>
-            {isLoading ? (
-              <LoadingForm completed={completed} classes={classes} />
-            ) : (
-              <ListForm table={classes.tableCell} lists={lists} />
-            )}
-          </TableBody>
+          {isLoading ? (
+            <LoadingForm completed={completed} />
+          ) : (
+            <>
+              <TableHead>
+                <TableHeadForm
+                  table={classes.tableHead}
+                  heads={this._tableHead()}
+                />
+              </TableHead>
+              <TableBody>
+                <ListForm table={classes.tableCell} lists={lists} />
+              </TableBody>
+            </>
+          )}
         </Table>
       </div>
     );

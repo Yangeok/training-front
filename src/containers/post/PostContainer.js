@@ -67,20 +67,22 @@ class PostContainer extends Component {
     return (
       <div className={classes.divContent}>
         <Table>
-          <TableHead>
-            <TableHeadForm
-              table={classes.tableHead}
-              heads={this._tableHead()}
-            />
-          </TableHead>
-          <TableBody>
-            {isLoading ? (
-              <LoadingForm completed={completed} progress={classes.progress} />
-            ) : (
-              <PostForm table={classes.tableCell} posts={posts} />
-            )}
-          </TableBody>
-          <TableFooter />
+          {isLoading ? (
+            <LoadingForm completed={completed} />
+          ) : (
+            <>
+              <TableHead>
+                <TableHeadForm
+                  table={classes.tableHead}
+                  heads={this._tableHead()}
+                />
+              </TableHead>
+              <TableBody>
+                <PostForm table={classes.tableCell} posts={posts} />
+              </TableBody>
+              <TableFooter />
+            </>
+          )}
         </Table>
         <PaginationForm
           pagination={classes.pagination}

@@ -6,7 +6,7 @@ export const styles = theme => ({
     }
   },
   paper: {
-    padding: theme.spacing.unit * 1,
+    padding: '0.5rem',
     textAlign: 'left',
     color: theme.palette.text.secondary
   },
@@ -21,8 +21,5 @@ export const styles = theme => ({
   },
   gridItem: {
     margin: '10px'
-  },
-  progress: {
-    margin: theme.spacing.unit * 10
   }
 });

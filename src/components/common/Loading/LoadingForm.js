@@ -1,13 +1,12 @@
 import React from 'react';
-import { TableRow, TableCell, CircularProgress } from '@material-ui/core';
+import { CircularProgress } from '@material-ui/core';
+import 'assets/styles/page.css';
 
 const LoadingForm = ({ completed, progress }) => {
   return (
-    <TableRow>
-      <TableCell align="center">
-        <CircularProgress className={progress} value={completed} />
-      </TableCell>
-    </TableRow>
+    <div className="progress-bar">
+      <CircularProgress className={progress} value={completed} />
+    </div>
   );
 };
 

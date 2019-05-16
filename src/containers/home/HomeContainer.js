@@ -38,10 +38,7 @@ class HomeContainer extends Component {
           <Grid className={classes.gridSub} sm={6}>
             <Paper className={classes.paper}>
               {isLoading ? (
-                <LoadingForm
-                  completed={completed}
-                  progress={classes.progress}
-                />
+                <LoadingForm completed={completed} />
               ) : (
                 <MainForm posts={blogPosts}>
                   <h3>블로그</h3>
@@ -52,10 +49,7 @@ class HomeContainer extends Component {
           <Grid className={classes.gridSub} item sm={6}>
             <Paper className={classes.paper}>
               {isLoading ? (
-                <LoadingForm
-                  completed={completed}
-                  progress={classes.progress}
-                />
+                <LoadingForm completed={completed} />
               ) : (
                 <MainForm posts={youtubePosts}>
                   <h3>유튜브</h3>
