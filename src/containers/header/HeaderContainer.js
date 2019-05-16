@@ -1,16 +1,11 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import {
   Toolbar,
   AppBar,
   IconButton,
   Typography,
   Menu,
-  Paper,
-  MenuList,
-  MenuItem,
-  Popper,
-  ClickAwayListener,
-  Grow
+  MenuItem
 } from '@material-ui/core/';
 import { withStyles } from '@material-ui/core/styles';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -18,20 +13,6 @@ import { options } from 'routes';
 import { styles } from './HeaderContainerStyle';
 
 const Header = ({ classes, title }) => {
-  // const [open, setOpen] = useState(false);
-  // const anchorEl = useRef(null);
-
-  // const handleToggle = () => {
-  //   setOpen(!open);
-  // };
-
-  // const handleClose = e => {
-  //   if (anchorEl.current.contains(e.target)) {
-  //     return;
-  //   }
-
-  //   setOpen(false);
-  // };
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -48,7 +29,6 @@ const Header = ({ classes, title }) => {
       <AppBar position="static" color="default">
         <Toolbar>
           <IconButton
-            className={classes.button}
             aria-label="More"
             aria-owns={open ? 'long-menu' : undefined}
             aria-haspopup="true"
@@ -57,7 +37,6 @@ const Header = ({ classes, title }) => {
             <ExpandMoreIcon />
           </IconButton>
           <Menu
-            className={classes.menu}
             id="long-menu"
             anchorEl={anchorEl}
             open={open}
@@ -78,37 +57,6 @@ const Header = ({ classes, title }) => {
         </Toolbar>
       </AppBar>
     </div>
-    // <div className={classes.root}>
-    //   <IconButton
-    //     buttonRef={anchorEl}
-    //     aria-owns={open ? 'menu-list-grow' : undefined}
-    //     aria-haspopup="true"
-    //     onClick={handleToggle}
-    //     onMouseOut={handleToggle}>
-    //     <ExpandMoreIcon />
-    //   </IconButton>
-    //   <Popper open={open} anchorEl={anchorEl.current} transition disablePortal>
-    //     {({ TransitionProps, placement }) => (
-    //       <Grow
-    //         {...TransitionProps}
-    //         id="menu-list-grow"
-    //         style={{
-    //           transformOrigin:
-    //             placement === 'bottom' ? 'center top' : 'center bottom'
-    //         }}>
-    //         <Paper>
-    //           <ClickAwayListener onClickAway={handleClose}>
-    //             <MenuList>
-    //               <MenuItem onClick={handleClose}>Profile</MenuItem>
-    //               <MenuItem onClick={handleClose}>My account</MenuItem>
-    //               <MenuItem onClick={handleClose}>Logout</MenuItem>
-    //             </MenuList>
-    //           </ClickAwayListener>
-    //         </Paper>
-    //       </Grow>
-    //     )}
-    //   </Popper>
-    // </div>
   );
 };
 

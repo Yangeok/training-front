@@ -14,32 +14,32 @@ const obj = [
   {
     path: '/',
     page: Home,
-    name: 'Home'
+    name: '메인'
   },
   {
     path: '/about/',
     page: About,
-    name: 'About'
+    name: '도움말'
   },
   {
     path: '/blog/:id/1/',
     page: BlogList,
-    name: 'BlogList'
+    name: '블로그 목록'
   },
   {
     path: '/blog/post/:id/15/',
     page: BlogPost,
-    name: 'BlogPost'
+    name: '블로그 피드'
   },
   {
     path: '/youtube/:id/1/',
     page: YoutubeList,
-    name: 'YoutubeList'
+    name: '유튜브 목록'
   },
   {
     path: '/youtube/post/:id/15/',
     page: YoutubePost,
-    name: 'YoutubePost'
+    name: '유튜브 피드'
   }
 ];
 

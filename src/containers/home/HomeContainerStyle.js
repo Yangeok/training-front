@@ -22,13 +22,6 @@ export const styles = theme => ({
   gridItem: {
     margin: '10px'
   },
-  gridContent: {
-    margin: '10px 10px 40px 10px',
-    fontSize: '13px'
-  },
-  gridList: {
-    paddingBottom: '10px'
-  },
   progress: {
     margin: theme.spacing.unit * 10
   }

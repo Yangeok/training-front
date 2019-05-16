@@ -4,7 +4,7 @@ import { Paper, Grid } from '@material-ui/core';
 import { styles } from './HomeContainerStyle';
 import { LoadingForm, MainForm } from 'components';
 import { connect } from 'react-redux';
-import { getPosts } from 'store/actions';
+import { getHomeGrids } from 'store/actions';
 
 class HomeContainer extends Component {
   state = {
@@ -12,8 +12,7 @@ class HomeContainer extends Component {
   };
 
   componentDidMount() {
-    this._getYoutubePosts();
-    this._getBlogPosts();
+    this._getHomeGrids();
     this.timer = setInterval(this._progress, 20);
   }
 
@@ -21,24 +20,17 @@ class HomeContainer extends Component {
     clearInterval(this.timer);
   }
 
-  _getBlogPosts = async () => {
-    const { getPosts } = this.props;
-
-    await getPosts(`blog/post/1/15`);
+  _getHomeGrids = async () => {
+    const { getHomeGrids } = this.props;
+    getHomeGrids(`blog/post/1/15`, `youtube/post/1/15`);
   };
-  _getYoutubePosts = async () => {
-    const { getPosts } = this.props;
-
-    await getPosts(`youtube/post/1/15`);
-  };
-
   _progress = () => {
     const { completed } = this.state;
     this.setState({ completed: completed >= 100 ? 0 : completed + 1 });
   };
 
   render() {
-    const { isLoading, classes, posts } = this.props;
+    const { isLoading, classes, blogPosts, youtubePosts } = this.props;
     const { completed } = this.state;
     return (
       <div className={classes.divContent}>
@@ -51,22 +43,9 @@ class HomeContainer extends Component {
                   progress={classes.progress}
                 />
               ) : (
-                <div className={classes.gridContent}>
+                <MainForm posts={blogPosts}>
                   <h3>블로그</h3>
-                  <ul>
-                    {posts &&
-                      posts.map(post => {
-                        return (
-                          <li className={classes.gridList}>
-                            <a href={post.link}>
-                              {post.title.substring(0, 40)}...
-                            </a>{' '}
-                            {post.creator}
-                          </li>
-                        );
-                      })}
-                  </ul>
-                </div>
+                </MainForm>
               )}
             </Paper>
           </Grid>
@@ -78,15 +57,9 @@ class HomeContainer extends Component {
                   progress={classes.progress}
                 />
               ) : (
-                <div className={classes.gridContent}>
+                <MainForm posts={youtubePosts}>
                   <h3>유튜브</h3>
-                  <ul>
-                    <li className={classes.gridList}>
-                      Lorem ipsum dolor sit amet, consetetur dwqdqd dqwdqwd...
-                      Author
-                    </li>
-                  </ul>
-                </div>
+                </MainForm>
               )}
             </Paper>
           </Grid>
@@ -97,13 +70,14 @@ class HomeContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-  isLoading: state.post.isLoading,
-  posts: state.post.payload,
-  error: state.post.error
+  isLoading: state.home.isLoading,
+  blogPosts: state.home.blog,
+  youtubePosts: state.home.youtube,
+  error: state.home.error
 });
 
 const mapDispatchToProps = dispatch => ({
-  getPosts: url => dispatch(getPosts.request(url))
+  getHomeGrids: (blog, youtube) => dispatch(getHomeGrids.request(blog, youtube))
 });
 
 const connectModule = connect(

@@ -11,4 +11,4 @@ function createRequestTypes(base) {
 
 export const GET_LISTS = createRequestTypes('GET_LISTS');
 export const GET_POSTS = createRequestTypes('GET_POSTS');
-export const GET_TESTS = createRequestTypes('GET_TESTS');
+export const GET_HOME_GRIDS = createRequestTypes('GET_HOME_GRIDS');
