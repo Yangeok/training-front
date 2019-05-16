@@ -1,5 +1,6 @@
 // LAYOUT
 export { default as App } from 'components/App';
+export { default as HeaderForm } from 'components/layout/Header';
 export { default as Footer } from 'components/layout/Footer';
 export { default as ListForm } from 'components/layout/List';
 export { default as PostForm } from 'components/layout/Post';
