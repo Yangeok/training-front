@@ -12,7 +12,9 @@ const PostForm = ({ posts, table }) => {
                 {post.creator}
               </TableCell>
               <TableCell data-label="TITLE" className={table}>
-                <a href={post.link}>{post.title}</a>
+                <a href={post.link} target="_blank" rel="noopener noreferrer">
+                  {post.title}
+                </a>
               </TableCell>
               <TableCell data-label="DATE" className={table}>
                 {post.pubDate.substring(0, 10)}

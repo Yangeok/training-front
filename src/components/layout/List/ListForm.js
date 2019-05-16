@@ -9,7 +9,9 @@ const ListForm = ({ lists, table }) => {
           return (
             <TableRow>
               <TableCell data-label="AUTHOR" className={table} key={list.name}>
-                <a href={list.url}>{list.name}</a>
+                <a href={list.url} target="_blank" rel="noopener noreferrer">
+                  {list.name}
+                </a>
               </TableCell>
               <TableCell data-label="DESCRIPTION" className={table}>
                 {list.desc}
