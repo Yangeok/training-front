@@ -13,6 +13,7 @@
 - opml 가져와서 아이콘, 링크 추가하기
 - 타입스크립트 리팩토링
 - scss 리팩토링
+- react hooks 리팩토링
 
 ## Summary
 
