@@ -37,5 +37,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "proxy": "https://training-log-back.herokuapp.com/"
+  "proxy": "http://52.79.70.237/"
 }

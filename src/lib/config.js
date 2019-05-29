@@ -1,4 +1,5 @@
 export default {
-  apiURL: 'https://training-log-back.herokuapp.com/',
+  apiURL: 'http://52.79.70.237/',
+  // apiURL: 'https://training-log-back.herokuapp.com/',
   header: { headers: { 'Access-Control-Allow-Origin': '*' } }
 };
