@@ -36,9 +36,7 @@ const HeaderForm = ({ handleClick, handleClose, anchorEl, open, title }) => {
             </MenuItem>
           ))}
         </Menu>
-        <Typography className="jss80" variant="h5" color="inherit">
-          {title.toUpperCase()}
-        </Typography>
+        <h2>{title.toUpperCase()}</h2>
       </Toolbar>
     </AppBar>
   );
