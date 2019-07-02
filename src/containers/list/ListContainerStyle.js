@@ -1,7 +1,4 @@
 export const styles = theme => ({
-  button: {
-    margin: '20px 0 40px 0'
-  },
   divContent: {
     [theme.breakpoints.up('sm')]: {
       maxWidth: '95%',

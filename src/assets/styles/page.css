@@ -7,7 +7,6 @@ body {
 h5.MuiTypography-root-64 {
   font-family: 'Nanum Myeongjo', sans-serif;
 }
-
 span {
   font-family: 'Nanum Myeongjo', sans-serif;
 }
@@ -81,4 +80,9 @@ a:hover {
   display: flex;
   justify-content: center;
   padding: 3rem;
+}
+
+/* 버튼 컴포넌트 */
+.button-form {
+  margin: 1rem 0 2rem 1rem;
 }

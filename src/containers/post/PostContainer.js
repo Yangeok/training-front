@@ -12,7 +12,8 @@ import {
   LoadingForm,
   PostForm,
   TableHeadForm,
-  PaginationForm
+  PaginationForm,
+  ButtonForm
 } from 'components';
 import { connect } from 'react-redux';
 import { getPosts } from 'store/actions';
@@ -66,49 +67,36 @@ class PostContainer extends Component {
     const { isLoading, classes, posts, id, total } = this.props;
     const { completed } = this.state;
     return (
-      <div className={classes.divContent}>
-        <Button
-          className={classes.button}
-          size="small"
-          variant="contained"
-          color="primary"
-          aria-label="Small contained button group">
-          총
-        </Button>
-        <Button
-          className={classes.button}
-          size="small"
-          variant="contained"
-          color="default"
-          aria-label="Small contained button group">
-          {total}
-        </Button>
-        <Table>
-          {isLoading ? (
-            <LoadingForm completed={completed} />
-          ) : (
-            <>
-              <TableHead>
-                <TableHeadForm
-                  table={classes.tableHead}
-                  heads={this._tableHead()}
-                />
-              </TableHead>
-              <TableBody>
-                <PostForm table={classes.tableCell} posts={posts} />
-              </TableBody>
-              <TableFooter />
-            </>
+      <div>
+        <ButtonForm total={total} />
+        <div className={classes.divContent}>
+          <Table>
+            {isLoading ? (
+              <LoadingForm completed={completed} />
+            ) : (
+              <>
+                <TableHead>
+                  <TableHeadForm
+                    table={classes.tableHead}
+                    heads={this._tableHead()}
+                  />
+                </TableHead>
+                <TableBody>
+                  <PostForm table={classes.tableCell} posts={posts} />
+                </TableBody>
+                <TableFooter />
+              </>
+            )}
+          </Table>
+          {!isLoading && (
+            <PaginationForm
+              pagination={classes.pagination}
+              id={id}
+              total={total}
+              onClick={this._pageOnClick}
+            />
           )}
-        </Table>
-        {!isLoading && (
-          <PaginationForm
-            pagination={classes.pagination}
-            id={id}
-            total={total}
-            onClick={this._pageOnClick}
-          />
-        )}
+        </div>{' '}
       </div>
     );
   }

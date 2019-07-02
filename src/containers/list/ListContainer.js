@@ -7,7 +7,7 @@ import {
   Button
 } from '@material-ui/core';
 import { styles } from './ListContainerStyle';
-import { LoadingForm, ListForm, TableHeadForm } from 'components';
+import { LoadingForm, ListForm, TableHeadForm, ButtonForm } from 'components';
 import { connect } from 'react-redux';
 import { getLists } from 'store/actions';
 
@@ -57,42 +57,24 @@ class ListContainer extends Component {
     const { completed } = this.state;
     return (
       <div>
-        <Button
-          className={classes.button}
-          size="small"
-          variant="contained"
-          color="primary"
-          aria-label="Small contained button group">
-          총
-        </Button>
-        <Button
-          className={classes.button}
-          size="small"
-          variant="contained"
-          color="default"
-          aria-label="Small contained button group">
-          {total}
-        </Button>
-
+        <ButtonForm total={total} />
         <div className={classes.divContent}>
-          <Table className={classes.divContent}>
-            <Table>
-              {isLoading ? (
-                <LoadingForm completed={completed} />
-              ) : (
-                <>
-                  <TableHead>
-                    <TableHeadForm
-                      table={classes.tableHead}
-                      heads={this._tableHead()}
-                    />
-                  </TableHead>
-                  <TableBody>
-                    <ListForm table={classes.tableCell} lists={lists} />
-                  </TableBody>
-                </>
-              )}
-            </Table>
+          <Table>
+            {isLoading ? (
+              <LoadingForm completed={completed} />
+            ) : (
+              <>
+                <TableHead>
+                  <TableHeadForm
+                    table={classes.tableHead}
+                    heads={this._tableHead()}
+                  />
+                </TableHead>
+                <TableBody>
+                  <ListForm table={classes.tableCell} lists={lists} />
+                </TableBody>
+              </>
+            )}
           </Table>
         </div>
       </div>

@@ -7,6 +7,7 @@ export { default as PostForm } from 'components/layout/Post';
 export { default as MainForm } from 'components/layout/Main';
 
 //COMMON
+export { default as ButtonForm } from 'components/common/Button';
 export { default as LoadingForm } from 'components/common/Loading';
 export { default as PaginationForm } from 'components/common/Pagination';
 export { default as TableHeadForm } from 'components/common/TableHead';
