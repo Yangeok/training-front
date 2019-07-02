@@ -56,45 +56,45 @@ class ListContainer extends Component {
     const { isLoading, classes, lists, total } = this.props;
     const { completed } = this.state;
     return (
-      <div className={classes.divContent}>
-        <div>
-          <Button
-            className={classes.button}
-            size="small"
-            variant="contained"
-            color="primary"
-            aria-label="Small contained button group">
-            총
-          </Button>
-          <Button
-            className={classes.button}
-            size="small"
-            variant="contained"
-            color="default"
-            aria-label="Small contained button group">
-            {total}
-          </Button>
-        </div>
+      <div>
+        <Button
+          className={classes.button}
+          size="small"
+          variant="contained"
+          color="primary"
+          aria-label="Small contained button group">
+          총
+        </Button>
+        <Button
+          className={classes.button}
+          size="small"
+          variant="contained"
+          color="default"
+          aria-label="Small contained button group">
+          {total}
+        </Button>
 
-        <Table className={classes.divContent}>
-          <Table>
-            {isLoading ? (
-              <LoadingForm completed={completed} />
-            ) : (
-              <>
-                <TableHead>
-                  <TableHeadForm
-                    table={classes.tableHead}
-                    heads={this._tableHead()}
-                  />
-                </TableHead>
-                <TableBody>
-                  <ListForm table={classes.tableCell} lists={lists} />
-                </TableBody>
-              </>
-            )}
+        <div className={classes.divContent}>
+          <Table className={classes.divContent}>
+            <Table>
+              {isLoading ? (
+                <LoadingForm completed={completed} />
+              ) : (
+                <>
+                  <TableHead>
+                    <TableHeadForm
+                      table={classes.tableHead}
+                      heads={this._tableHead()}
+                    />
+                  </TableHead>
+                  <TableBody>
+                    <ListForm table={classes.tableCell} lists={lists} />
+                  </TableBody>
+                </>
+              )}
+            </Table>
           </Table>
-        </Table>
+        </div>
       </div>
     );
   }
