@@ -51,7 +51,7 @@ class ListContainer extends Component {
     const { completed } = this.state;
     return (
       <div>
-        <ButtonForm total={total} />
+        {/* <ButtonForm total={total} /> */}
         <div className={classes.divContent}>
           <Table>
             {isLoading ? (
