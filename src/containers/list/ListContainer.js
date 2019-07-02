@@ -4,6 +4,9 @@ import {
   withStyles,
   Table,
   TableHead,
+  Grid,
+  ButtonGroup,
+  ButtonBase,
   Button
 } from '@material-ui/core';
 import { styles } from './ListContainerStyle';
@@ -52,41 +55,46 @@ class ListContainer extends Component {
     const { isLoading, classes, lists, total } = this.props;
     const { completed } = this.state;
     return (
-      <Table className={classes.divContent}>
-        <Button
-          className={classes.button}
-          size="small"
-          variant="contained"
-          color="primary"
-          aria-label="Small contained button group">
-          총
-        </Button>
-        <Button
-          className={classes.button}
-          size="small"
-          variant="contained"
-          color="default"
-          aria-label="Small contained button group">
-          {total}
-        </Button>
-        <Table>
-          {isLoading ? (
-            <LoadingForm completed={completed} />
-          ) : (
-            <>
-              <TableHead>
-                <TableHeadForm
-                  table={classes.tableHead}
-                  heads={this._tableHead()}
-                />
-              </TableHead>
-              <TableBody>
-                <ListForm table={classes.tableCell} lists={lists} />
-              </TableBody>
-            </>
-          )}
+      <div className={classes.divContent}>
+        <div>
+          <Button
+            className={classes.button}
+            size="small"
+            variant="contained"
+            color="primary"
+            aria-label="Small contained button group">
+            총
+          </Button>
+          <Button
+            className={classes.button}
+            size="small"
+            variant="contained"
+            color="default"
+            aria-label="Small contained button group">
+            {total}
+          </Button>
+        </div>
+
+        <Table className={classes.divContent}>
+          <Table>
+            {isLoading ? (
+              <LoadingForm completed={completed} />
+            ) : (
+              <>
+                <TableHead>
+                  <TableHeadForm
+                    table={classes.tableHead}
+                    heads={this._tableHead()}
+                  />
+                </TableHead>
+                <TableBody>
+                  <ListForm table={classes.tableCell} lists={lists} />
+                </TableBody>
+              </>
+            )}
+          </Table>
         </Table>
-      </Table>
+      </div>
     );
   }
 }
