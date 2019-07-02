@@ -8,12 +8,12 @@ export const styles = theme => ({
     margin: 'auto'
   },
   tableHead: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.up('sm')]: {
       display: 'none'
     }
   },
   tableCell: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.up('sm')]: {
       padding: '5px 10px 5px 10px',
       textAlign: 'right',
       display: 'flex',
