@@ -3,7 +3,6 @@ import {
   Toolbar,
   AppBar,
   IconButton,
-  Typography,
   Menu,
   MenuItem
 } from '@material-ui/core/';

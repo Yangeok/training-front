@@ -4,9 +4,6 @@ import {
   withStyles,
   Table,
   TableHead,
-  Grid,
-  ButtonGroup,
-  ButtonBase,
   Button
 } from '@material-ui/core';
 import { styles } from './ListContainerStyle';
@@ -29,11 +26,15 @@ class ListContainer extends Component {
   }
 
   _getPlatformLists = () => {
-    const { getLists, location, history, match } = this.props;
+    const {
+      getLists,
+      location
+      // history
+    } = this.props;
     const platform = location.pathname.split('/')[1];
-    let id = location.pathname.split('/')[2];
+    // let id = location.pathname.split('/')[2];
 
-    const isId = id === ':id' ? history.push(`/${platform}/1/100`) : 1;
+    // const isId = id === ':id' ? history.push(`/${platform}/1/100`) : 1;
     // const isId = typeof id !== Number;
     // if (isId) {
     //   id = 1;
