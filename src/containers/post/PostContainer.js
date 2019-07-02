@@ -4,10 +4,9 @@ import {
   TableHead,
   withStyles,
   Table,
-  TableFooter,
-  Button
+  TableFooter
 } from '@material-ui/core';
-import { styles } from './PostContainerStyle';
+import { styles } from 'assets/styles/container';
 import {
   LoadingForm,
   PostForm,

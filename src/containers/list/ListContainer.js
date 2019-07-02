@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
-import {
-  TableBody,
-  withStyles,
-  Table,
-  TableHead,
-  Button
-} from '@material-ui/core';
-import { styles } from './ListContainerStyle';
+import { TableBody, withStyles, Table, TableHead } from '@material-ui/core';
+import { styles } from 'assets/styles/container';
 import { LoadingForm, ListForm, TableHeadForm, ButtonForm } from 'components';
 import { connect } from 'react-redux';
 import { getLists } from 'store/actions';
