@@ -21,13 +21,13 @@ export const styles = theme => ({
       textAlign: 'right',
       display: 'flex',
       justifyContent: 'space-between',
-      '&::before': {
-        color: 'rgba(0, 0, 0, 0.54)',
-        textAlign: 'left',
-        fontSize: '0.75rem',
-        fontWeight: '500',
-        content: 'attr(data-label)'
-      },
+      // '&::before': {
+      //   color: 'rgba(0, 0, 0, 0.54)',
+      //   textAlign: 'left',
+      //   fontSize: '0.75rem',
+      //   fontWeight: '500',
+      //   content: 'attr(data-label)'
+      // },
       '&:first-child': {
         borderTop: '1px solid rgba(225, 225, 225, 1)'
       },
