@@ -50,27 +50,25 @@ class ListContainer extends Component {
     const { isLoading, classes, lists, total } = this.props;
     const { completed } = this.state;
     return (
-      <div>
+      <div className={classes.divContent}>
         {/* <ButtonForm total={total} /> */}
-        <div className={classes.divContent}>
-          <Table>
-            {isLoading ? (
-              <LoadingForm completed={completed} />
-            ) : (
-              <>
-                <TableHead>
-                  <TableHeadForm
-                    table={classes.tableHead}
-                    heads={this._tableHead()}
-                  />
-                </TableHead>
-                <TableBody>
-                  <ListForm table={classes.tableCell} lists={lists} />
-                </TableBody>
-              </>
-            )}
-          </Table>
-        </div>
+        <Table>
+          {isLoading ? (
+            <LoadingForm completed={completed} />
+          ) : (
+            <>
+              <TableHead>
+                <TableHeadForm
+                  table={classes.tableHead}
+                  heads={this._tableHead()}
+                />
+              </TableHead>
+              <TableBody>
+                <ListForm table={classes.tableCell} lists={lists} />
+              </TableBody>
+            </>
+          )}
+        </Table>
       </div>
     );
   }
