@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { TableBody, withStyles, Table, TableHead } from '@material-ui/core';
+import {
+  TableBody,
+  withStyles,
+  Table,
+  TableHead,
+  Button
+} from '@material-ui/core';
 import { styles } from './ListContainerStyle';
 import { LoadingForm, ListForm, TableHeadForm } from 'components';
 import { connect } from 'react-redux';
@@ -20,12 +26,17 @@ class ListContainer extends Component {
   }
 
   _getPlatformLists = () => {
-    const { getLists, location, history } = this.props;
+    const { getLists, location, history, match } = this.props;
     const platform = location.pathname.split('/')[1];
-    const id = location.pathname.split('/')[2];
+    let id = location.pathname.split('/')[2];
 
-    const isId = id === ':id' ? history.push(`/${platform}/1/1`) : 1;
-    getLists(`${platform}/${isId}/1`);
+    const isId = id === ':id' ? history.push(`/${platform}/1/100`) : 1;
+    // const isId = typeof id !== Number;
+    // if (isId) {
+    //   id = 1;
+    //   history.push(`/${platform}/${id}/100`);
+    // }
+    getLists(`${platform}/1/100`);
   };
 
   _tableHead = () => {
@@ -38,10 +49,26 @@ class ListContainer extends Component {
   };
 
   render() {
-    const { isLoading, classes, lists } = this.props;
+    const { isLoading, classes, lists, total } = this.props;
     const { completed } = this.state;
     return (
-      <div className={classes.divContent}>
+      <Table className={classes.divContent}>
+        <Button
+          className={classes.button}
+          size="small"
+          variant="contained"
+          color="primary"
+          aria-label="Small contained button group">
+          총
+        </Button>
+        <Button
+          className={classes.button}
+          size="small"
+          variant="contained"
+          color="default"
+          aria-label="Small contained button group">
+          {total}
+        </Button>
         <Table>
           {isLoading ? (
             <LoadingForm completed={completed} />
@@ -59,7 +86,7 @@ class ListContainer extends Component {
             </>
           )}
         </Table>
-      </div>
+      </Table>
     );
   }
 }
@@ -67,7 +94,8 @@ class ListContainer extends Component {
 const mapStateToProps = state => ({
   isLoading: state.list.isLoading,
   lists: state.list.payload,
-  error: state.post.error
+  total: state.list.pageMeta,
+  error: state.list.error
 });
 
 const mapDispatchToProps = dispatch => ({

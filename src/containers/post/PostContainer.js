@@ -4,7 +4,8 @@ import {
   TableHead,
   withStyles,
   Table,
-  TableFooter
+  TableFooter,
+  Button
 } from '@material-ui/core';
 import { styles } from './PostContainerStyle';
 import {
@@ -66,6 +67,22 @@ class PostContainer extends Component {
     const { completed } = this.state;
     return (
       <div className={classes.divContent}>
+        <Button
+          className={classes.button}
+          size="small"
+          variant="contained"
+          color="primary"
+          aria-label="Small contained button group">
+          총
+        </Button>
+        <Button
+          className={classes.button}
+          size="small"
+          variant="contained"
+          color="default"
+          aria-label="Small contained button group">
+          {total}
+        </Button>
         <Table>
           {isLoading ? (
             <LoadingForm completed={completed} />

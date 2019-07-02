@@ -8,6 +8,10 @@ h5.MuiTypography-root-64 {
   font-family: 'Nanum Myeongjo', sans-serif;
 }
 
+span {
+  font-family: 'Nanum Myeongjo', sans-serif;
+}
+
 li.MuiButtonBase-root-48 {
   font-family: 'Nanum Myeongjo', sans-serif;
 }
@@ -17,9 +21,18 @@ table {
 th {
   font-family: 'Nanum Myeongjo', sans-serif;
 }
+
+th.MuiTableCell-root {
+  font-family: 'Nanum Myeongjo', sans-serif;
+}
 td {
   font-family: 'Nanum Myeongjo', sans-serif;
 }
+
+td.MuiTableCell-root {
+  font-family: 'Nanum Myeongjo', sans-serif;
+}
+
 span.MuiButton-label-342 {
   font-family: 'Nanum Myeongjo', sans-serif;
 }

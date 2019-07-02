@@ -22,7 +22,7 @@ const obj = [
     name: '도움말'
   },
   {
-    path: '/blog/:id/1/',
+    path: '/blog/:id/100/',
     page: BlogList,
     name: '블로그 목록'
   },
@@ -32,7 +32,7 @@ const obj = [
     name: '블로그 피드'
   },
   {
-    path: '/youtube/:id/1/',
+    path: '/youtube/:id/100/',
     page: YoutubeList,
     name: '유튜브 목록'
   },

@@ -1,5 +1,9 @@
 # Training Log Front-end Server
 
+## Updated
+
+- 총 author, posts 뱃지 추가
+
 ## Todo
 
 - 해외, 국내로 리스트를 4개로 만들기

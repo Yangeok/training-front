@@ -8,7 +8,8 @@ export default (state = {}, { type, payload }) => {
       return {
         ...state,
         isLoading: false,
-        payload
+        payload: payload.docs,
+        pageMeta: payload.totalDocs
       };
     case GET_LISTS[FAILURE]:
       return { ...state, isLoading: false, error: payload };
