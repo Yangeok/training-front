@@ -1,23 +1,10 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
 
 const ButtonForm = ({ total }) => {
   return (
-    <div className="button-form">
-      <Button
-        size="small"
-        variant="contained"
-        color="primary"
-        aria-label="Small contained button group">
-        총
-      </Button>
-      <Button
-        size="small"
-        variant="contained"
-        color="default"
-        aria-label="Small contained button group">
-        {total}
-      </Button>
+    <div class="button-form tags are-normal has-addons">
+      <span class="tag is-dark">총</span>
+      <span class="tag is-primary">{total}</span>
     </div>
   );
 };

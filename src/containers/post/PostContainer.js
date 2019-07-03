@@ -66,36 +66,34 @@ class PostContainer extends Component {
     const { isLoading, classes, posts, id, total } = this.props;
     const { completed } = this.state;
     return (
-      <div>
+      <div className={classes.divContent}>
         <ButtonForm total={total} />
-        <div className={classes.divContent}>
-          <Table>
-            {isLoading ? (
-              <LoadingForm completed={completed} />
-            ) : (
-              <>
-                <TableHead>
-                  <TableHeadForm
-                    table={classes.tableHead}
-                    heads={this._tableHead()}
-                  />
-                </TableHead>
-                <TableBody>
-                  <PostForm table={classes.tableCell} posts={posts} />
-                </TableBody>
-                <TableFooter />
-              </>
-            )}
-          </Table>
-          {!isLoading && (
-            <PaginationForm
-              pagination={classes.pagination}
-              id={id}
-              total={total}
-              onClick={this._pageOnClick}
-            />
+        <Table>
+          {isLoading ? (
+            <LoadingForm completed={completed} />
+          ) : (
+            <>
+              <TableHead>
+                <TableHeadForm
+                  table={classes.tableHead}
+                  heads={this._tableHead()}
+                />
+              </TableHead>
+              <TableBody>
+                <PostForm table={classes.tableCell} posts={posts} />
+              </TableBody>
+              <TableFooter />
+            </>
           )}
-        </div>{' '}
+        </Table>
+        {!isLoading && (
+          <PaginationForm
+            pagination={classes.pagination}
+            id={id}
+            total={total}
+            onClick={this._pageOnClick}
+          />
+        )}
       </div>
     );
   }
