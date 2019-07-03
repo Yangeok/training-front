@@ -6,7 +6,7 @@ const TableHeadForm = ({ heads, table }) => {
     <TableRow>
       {heads.map(head => {
         return (
-          <TableCell className={table} key={head}>
+          <TableCell className="table-head" key={head}>
             {head}
           </TableCell>
         );

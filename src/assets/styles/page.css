@@ -1,4 +1,4 @@
-/* 폰트 */
+/* Font */
 @import url(https://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
 
 body {
@@ -10,7 +10,6 @@ h5.MuiTypography-root-64 {
 span {
   font-family: 'Nanum Myeongjo', sans-serif;
 }
-
 li.MuiButtonBase-root-48 {
   font-family: 'Nanum Myeongjo', sans-serif;
 }
@@ -20,18 +19,15 @@ table {
 th {
   font-family: 'Nanum Myeongjo', sans-serif;
 }
-
 th.MuiTableCell-root {
   font-family: 'Nanum Myeongjo', sans-serif;
 }
 td {
   font-family: 'Nanum Myeongjo', sans-serif;
 }
-
 td.MuiTableCell-root {
   font-family: 'Nanum Myeongjo', sans-serif;
 }
-
 span.MuiButton-label-342 {
   font-family: 'Nanum Myeongjo', sans-serif;
 }
@@ -42,7 +38,7 @@ a {
   font-family: 'Nanum Myeongjo', sans-serif;
 }
 
-/* 공통 */
+/* Common */
 .main-description {
   max-width: 95%;
   margin: 1rem 0 1rem 1rem;
@@ -56,7 +52,7 @@ img {
   margin: 1rem 0 1rem 1rem;
 }
 
-/* 페이지 링크 색상 */
+/* Page link color */
 a {
   color: #3273dc;
   text-decoration: none;
@@ -65,7 +61,7 @@ a:hover {
   color: #7957d5;
 }
 
-/* 메인 컴포넌트 */
+/* Main component */
 .grid-content {
   margin: 10px 10px 40px 10px;
   font-size: 13px;
@@ -75,14 +71,41 @@ a:hover {
   margin-left: -15px;
 }
 
-/* 로딩 컴포넌트 */
+/* Loading component */
 .progress-bar {
   display: flex;
   justify-content: center;
   padding: 3rem;
 }
 
-/* 버튼 컴포넌트 */
+/* Button component */
 .button-form {
   margin: 1rem 0 2rem 1rem;
+}
+
+/* Table head component */
+@media (max-width: 959.95px) {
+  .table-head {
+    display: none !important;
+  }
+  .table-cell {
+    padding: 5px 10px 5px 10px !important;
+    text-align: right !important;
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+  .table-cell::before {
+    color: rgba(0, 0, 0, 0.54) !important;
+    text-align: left !important;
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+    content: attr(data-label);
+  }
+  .table-cell:first-child {
+    border-top: 1px solid rgba(225, 225, 225, 1);
+  }
+  .table-cell:last-child {
+    padding-right: 10px;
+    margin-bottom: 1rem;
+  }
 }
