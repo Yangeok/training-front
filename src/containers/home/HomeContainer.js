@@ -41,7 +41,7 @@ class HomeContainer extends Component {
                 <LoadingForm completed={completed} />
               ) : (
                 <MainForm posts={blogPosts}>
-                  <h3>블로그</h3>
+                  <h3 className="grid-header">블로그</h3>
                 </MainForm>
               )}
             </Paper>
@@ -52,7 +52,7 @@ class HomeContainer extends Component {
                 <LoadingForm completed={completed} />
               ) : (
                 <MainForm posts={youtubePosts}>
-                  <h3>유튜브</h3>
+                  <h3 className="grid-header">유튜브</h3>
                 </MainForm>
               )}
             </Paper>
