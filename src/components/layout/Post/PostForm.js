@@ -8,15 +8,18 @@ const PostForm = ({ posts, table }) => {
         posts.map(post => {
           return (
             <TableRow>
-              <TableCell data-label="AUTHOR" className={table} key={post.title}>
+              <TableCell
+                data-label="AUTHOR"
+                className="table-cell"
+                key={post.title}>
                 {post.creator}
               </TableCell>
-              <TableCell data-label="TITLE" className={table}>
+              <TableCell data-label="TITLE" className="table-cell">
                 <a href={post.link} target="_blank" rel="noopener noreferrer">
                   {post.title}
                 </a>
               </TableCell>
-              <TableCell data-label="DATE" className={table}>
+              <TableCell data-label="DATE" className="table-cell">
                 {post.pubDate.substring(0, 10)}
               </TableCell>
             </TableRow>
